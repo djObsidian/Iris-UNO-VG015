@@ -20,7 +20,7 @@
 ### 1. Установка драйвера USB-UART 
 Подключите плату к ПК с помощью кабеля USB-C. Windows 10 и новее должен автоматически установить драйвера на USB-UART преобразователь. Если этого не произошло, скачайте и установите драйвер с сайта WCH [3]
 ### 2. Установка драйвера USB-JTAG
- Установите драйвер WinUSB с помощью Zagidg [4] для устройства USB to UART+JTAG (Interface 2)
+ Установите драйвер WinUSB с помощью Zadig [4] для устройства USB to UART+JTAG (Interface 2)
 ![alt text](images/DriverInstall.png)  
 ### 3. Установка IDE
 Далее для установки среды разработки Syntacore IDE следуйте шагам 1-5 из главы 3 руководства "Быстрый старт" [5]  
@@ -39,8 +39,8 @@
 -c "init;halt"
  ```
  ### 6. Настройки проекта для платы Ирис UNO
- Для запуска примеров из NIIET RISC-V на плате Ирис UNO необходимо поменять символы при сборке проекта. Откройте меню Project -> Properties -> C/C++ Build -> GNU RISC-V C Compiler -> Preprocessor
-![alt text](images/HSEclkval.png)
+ Для запуска примеров из NIIET RISC-V на плате Ирис UNO необходимо поменять символы при сборке проекта. Откройте меню Project -> Properties -> C/C++ Build -> Settings -> GNU RISC-V C Compiler -> Preprocessor
+![alt text](images/HSEclkval.png)  
 Поменяйте значение символа HSECLK_VAL на 12000000. 
 Для использования `printf` с перенаправлением вывода в UART откройте файл `retarget.c`, находящийся в корне проекта и поменяйте дефайн `SystemCoreClock_uart` на следующий:
 ```c
