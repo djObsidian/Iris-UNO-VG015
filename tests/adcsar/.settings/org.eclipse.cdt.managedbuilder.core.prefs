@@ -1,0 +1,13 @@
+eclipse.preferences.version=1
+environment/buildEnvironmentInclude/ilg.gnumcueclipse.managedbuild.cross.riscv.config.elf.debug.1169430593/CPATH/delimiter=;
+environment/buildEnvironmentInclude/ilg.gnumcueclipse.managedbuild.cross.riscv.config.elf.debug.1169430593/CPATH/operation=remove
+environment/buildEnvironmentInclude/ilg.gnumcueclipse.managedbuild.cross.riscv.config.elf.debug.1169430593/CPLUS_INCLUDE_PATH/delimiter=;
+environment/buildEnvironmentInclude/ilg.gnumcueclipse.managedbuild.cross.riscv.config.elf.debug.1169430593/CPLUS_INCLUDE_PATH/operation=remove
+environment/buildEnvironmentInclude/ilg.gnumcueclipse.managedbuild.cross.riscv.config.elf.debug.1169430593/C_INCLUDE_PATH/delimiter=;
+environment/buildEnvironmentInclude/ilg.gnumcueclipse.managedbuild.cross.riscv.config.elf.debug.1169430593/C_INCLUDE_PATH/operation=remove
+environment/buildEnvironmentInclude/ilg.gnumcueclipse.managedbuild.cross.riscv.config.elf.debug.1169430593/append=true
+environment/buildEnvironmentInclude/ilg.gnumcueclipse.managedbuild.cross.riscv.config.elf.debug.1169430593/appendContributed=true
+environment/buildEnvironmentLibrary/ilg.gnumcueclipse.managedbuild.cross.riscv.config.elf.debug.1169430593/LIBRARY_PATH/delimiter=;
+environment/buildEnvironmentLibrary/ilg.gnumcueclipse.managedbuild.cross.riscv.config.elf.debug.1169430593/LIBRARY_PATH/operation=remove
+environment/buildEnvironmentLibrary/ilg.gnumcueclipse.managedbuild.cross.riscv.config.elf.debug.1169430593/append=true
+environment/buildEnvironmentLibrary/ilg.gnumcueclipse.managedbuild.cross.riscv.config.elf.debug.1169430593/appendContributed=true
