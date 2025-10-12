@@ -1,0 +1,1971 @@
+
+gpio_led_run.elf:     file format elf32-littleriscv
+gpio_led_run.elf
+architecture: riscv:rv32, flags 0x00000112:
+EXEC_P, HAS_SYMS, D_PAGED
+start address 0x80000000
+
+Program Header:
+0x70000003 off    0x00041eb8 vaddr 0x00000000 paddr 0x00000000 align 2**0
+         filesz 0x00000041 memsz 0x00000000 flags r--
+    LOAD off    0x00000000 vaddr 0x4003f000 paddr 0x4003f000 align 2**12
+         filesz 0x000000d4 memsz 0x00001000 flags rw-
+    LOAD off    0x00001000 vaddr 0x80000000 paddr 0x80000000 align 2**12
+         filesz 0x00000e38 memsz 0x00000e38 flags r-x
+    LOAD off    0x00002000 vaddr 0x40000000 paddr 0x80000e38 align 2**12
+         filesz 0x00000080 memsz 0x00000098 flags rw-
+   STACK off    0x00000000 vaddr 0x00000000 paddr 0x00000000 align 2**4
+         filesz 0x00000000 memsz 0x00000000 flags rw-
+
+Sections:
+Idx Name              Size      VMA       LMA       File off  Algn  Flags
+  0 .text.startup     00000160  80000000  80000000  00001000  2**1  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .text.crt         00000184  80000180  80000180  00001180  2**6  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .text             00000a32  80000304  80000304  00001304  2**2  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  3 .tbss             00000000  80000d38  80000d38  00000000  2**2  ALLOC, THREAD_LOCAL
+  4 .rodata           00000100  80000d38  80000d38  00001d38  2**2  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  5 .data             00000080  40000000  80000e38  00002000  2**2  CONTENTS, ALLOC, LOAD, DATA
+  6 .sbss             00000018  40000080  80000eb8  00002080  2**2  ALLOC
+  7 .bss              00000000  40000098  80000ed0  00000000  2**2  ALLOC
+  8 .stack            00000800  4003f800  4003f800  00000800  2**0  ALLOC
+  9 .debug_info       0000d50b  00000000  00000000  00002080  2**0  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 10 .debug_abbrev     00000b4b  00000000  00000000  0000f58b  2**0  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 11 .debug_loclists   000002b6  00000000  00000000  000100d6  2**0  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 12 .debug_aranges    000000b8  00000000  00000000  00010390  2**3  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 13 .debug_rnglists   00000085  00000000  00000000  00010448  2**0  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 14 .debug_line       00001319  00000000  00000000  000104cd  2**0  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 15 .debug_str        00030247  00000000  00000000  000117e6  2**0  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 16 .debug_line_str   00000479  00000000  00000000  00041a2d  2**0  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 17 .comment          00000012  00000000  00000000  00041ea6  2**0  CONTENTS, READONLY
+ 18 .riscv.attributes 00000041  00000000  00000000  00041eb8  2**0  CONTENTS, READONLY
+ 19 .debug_frame      00000190  00000000  00000000  00041efc  2**2  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 20 .debug_macro      000108bd  00000000  00000000  0004208c  2**0  CONTENTS, READONLY, DEBUGGING, OCTETS
+SYMBOL TABLE:
+80000000 l    d  .text.startup	00000000 .text.startup
+80000180 l    d  .text.crt	00000000 .text.crt
+80000304 l    d  .text	00000000 .text
+80000d38 l    d  .tbss	00000000 .tbss
+80000d38 l    d  .rodata	00000000 .rodata
+40000000 l    d  .data	00000000 .data
+40000080 l    d  .sbss	00000000 .sbss
+40000098 l    d  .bss	00000000 .bss
+4003f800 l    d  .stack	00000000 .stack
+00000000 l    d  .debug_info	00000000 .debug_info
+00000000 l    d  .debug_abbrev	00000000 .debug_abbrev
+00000000 l    d  .debug_loclists	00000000 .debug_loclists
+00000000 l    d  .debug_aranges	00000000 .debug_aranges
+00000000 l    d  .debug_rnglists	00000000 .debug_rnglists
+00000000 l    d  .debug_line	00000000 .debug_line
+00000000 l    d  .debug_str	00000000 .debug_str
+00000000 l    d  .debug_line_str	00000000 .debug_line_str
+00000000 l    d  .comment	00000000 .comment
+00000000 l    d  .riscv.attributes	00000000 .riscv.attributes
+00000000 l    d  .debug_frame	00000000 .debug_frame
+00000000 l    d  .debug_macro	00000000 .debug_macro
+00000000 l    df *ABS*	00000000 startup_k1921vg015.o
+80000304 l     F .text	0000000e GPIO_PullModeConfig
+80000312 l     F .text	00000012 PLIC_ClaimIrq
+80000324 l     F .text	00000012 PLIC_ClaimComplete
+80000336 l     F .text	00000012 PLIC_SetThreshold
+80000348 l     F .text	0000002e PLIC_MachHandler
+40000000 l     O .data	00000080 mach_plic_handler
+80000376 l     F .text	0000024a SystemCoreClockUpdate
+40000094 l     O .sbss	00000004 SystemCoreClock
+40000090 l     O .sbss	00000004 SystemPll0Clock
+4000008c l     O .sbss	00000004 SystemPll1Clock
+40000088 l     O .sbss	00000004 USBClock
+800005c0 l     F .text	000000e6 ClkInit
+800006a6 l     F .text	00000026 InterruptEnable
+800006cc l     F .text	0000000c SystemInit
+800006d8 l     F .text	00000044 gpio_init
+8000071c l     F .text	0000006c retarget_init
+80000788 l     F .text	00000012 periph_init
+800000a0 l     F .text.startup	000000b4 plf_init_generic
+40000084 l     O .sbss	00000004 led_shift
+40000080 l     O .sbss	00000004 pb12_state
+00000000 l    df *ABS*	00000000 libc_a-memset.o
+00000000 l    df *ABS*	00000000 libc_a-memcpy.o
+00000000 l    df *ABS*	00000000 _udivdi3.o
+00000800 g       *ABS*	00000000 STACK_SIZE
+40000780 g       *ABS*	00000000 __global_pointer$
+40040000 g       .stack	00000000 __TLS0_BASE__
+80000084 g       .text.startup	00000000 _hart_halt
+40000000 g       .data	00000000 __SDATA_BEGIN__
+800008a4 g     F .text	000000ec memcpy
+80000d38 g       *ABS*	00000000 __fini_array_source_start
+40000000 g       .data	00000000 __fini_array_target_start
+40000000 g       .data	00000000 __sdata_target_end
+0000346d  w      .debug_info	00000000 .hidden system_k1921vg015.c.37b0d580
+40000000 g       .data	00000000 __init_array_target_start
+00002f02  w      .debug_info	00000000 .hidden plic.c.dc438d80
+4003f800 g       *ABS*	00000000 _heap_end
+40000000 g       .data	00000000 __fini_array_target_end
+40000098 g       .bss	00000000 __bss_end
+80000990 g     F .text	000003a6 .hidden __udivdi3
+80000098  w      .text.startup	00000000 abort
+40000080 g       .data	00000000 __data_target_end
+400000a0 g       *ABS*	00000000 _heap_start
+8000079a g     F .text	00000016 trap_handler
+0000a614  w      .debug_info	00000000 .hidden retarget.c.1f6efe15
+80000000 g       *ABS*	00000000 __TEXT_INIT_START__
+80000000 g       .text.startup	00000000 _start
+80000e38 g       *ABS*	00000000 __sdata_source_start
+40000098 g       .bss	00000000 __BSS_END__
+00000160 g       *ABS*	00000000 __TEXT_INIT_SIZE__
+8000009c  w      .text.startup	00000000 app_init
+00007140  w      .debug_info	00000000 .hidden main.c.a4c8ddd5
+40000080 g       .sbss	00000000 __bss_start
+000005f3  w      .debug_info	00000000 .hidden plib015_gpio.c.57a4443c
+800007fc g     F .text	000000a8 memset
+800007b0 g     F .text	0000004c main
+80000180  w    F .text.crt	0000014c trap_entry
+40000000 g       .data	00000000 __data_target_start
+80000d38 g       *ABS*	00000000 __init_array_source_start
+80000d38 g     O .rodata	00000100 .hidden __clz_tab
+40000000 g       .data	00000000 __sdata_target_start
+800000a0 g     F .text.startup	000000b4 plf_init
+40000000 g       .data	00000000 __init_array_target_end
+40000000 g       .data	00000000 __DATA_BEGIN__
+40000080 g       .data	00000000 _edata
+000032a0  w      .debug_info	00000000 .hidden sys_init.c.42320747
+80000094  w      .text.startup	00000000 exit
+80000d38 g       .text	00000000 _tdata_start
+80000d38 g       .tbss	00000000 _tbss_end
+00000000 g       *ABS*	00000000 __TLS_SIZE__
+80000e38 g       *ABS*	00000000 __data_source_start
+4003f800 g       .stack	00000000 __STACK_START__
+
+
+
+Disassembly of section .text.startup:
+
+80000000 <_start>:
+_start():
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/startup_k1921vg015.S:21
+    .section ".startup.entry","ax",@progbits
+
+    ## Entry point
+_start:
+    ## reset mstatus
+    csrw  mstatus, zero
+80000000:	30001073          	csrw	mstatus,zero
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/startup_k1921vg015.S:31
+    init_regs_const 16, 31, 0
+#endif // !__riscv_32e
+#endif // PLF_INIT_REGS
+
+    ## setup gp
+    load_addrword_abs gp, __global_pointer$
+80000004:	400001b7          	lui	gp,0x40000
+80000008:	78018193          	addi	gp,gp,1920 # 40000780 <__global_pointer$>
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/startup_k1921vg015.S:33
+    ## setup MTVEC
+    load_addrword_abs t0, trap_entry
+8000000c:	800002b7          	lui	t0,0x80000
+80000010:	18028293          	addi	t0,t0,384 # 80000180 <trap_entry>
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/startup_k1921vg015.S:34
+    csrw  mtvec, t0
+80000014:	30529073          	csrw	mtvec,t0
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/startup_k1921vg015.S:38
+    ## setup MIE, MIP
+
+
+    csrw  mie, zero
+80000018:	30401073          	csrw	mie,zero
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/startup_k1921vg015.S:39
+    csrw  mip, zero
+8000001c:	34401073          	csrw	mip,zero
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/startup_k1921vg015.S:49
+    load_const_int32 t1, __TEXT_INIT_SIZE__
+    cache_flush t0, t1
+#endif // PLF_CACHE_CFG
+
+    ## init FPU (if supported)
+    csrr  a0, misa
+80000020:	30102573          	csrr	a0,misa
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/startup_k1921vg015.S:50
+    andi  a0, a0, (1 << ('F' - 'A')) | (1 << ('D' - 'A'))
+80000024:	02857513          	andi	a0,a0,40
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/startup_k1921vg015.S:51
+    beqz  a0, 1f
+80000028:	00050863          	beqz	a0,80000038 <_start+0x38>
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/startup_k1921vg015.S:52
+    li    a0, (1 << 13) // mstatus.FS = 1 (initial)
+8000002c:	00002537          	lui	a0,0x2
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/startup_k1921vg015.S:53
+    csrs  mstatus, a0
+80000030:	30052073          	csrs	mstatus,a0
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/startup_k1921vg015.S:54
+    csrw  fcsr, zero
+80000034:	00301073          	fscsr	zero
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/startup_k1921vg015.S:64
+#else
+#define slave_hart_start _hart_halt
+#endif // PLF_SMP_SUPPORT
+
+    ## park/prep SMP slaves
+    csrr  a0, mhartid
+80000038:	f1402573          	csrr	a0,mhartid
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/startup_k1921vg015.S:73
+#if PLF_SMP_MASTER_HARTID > 0
+    li    t0, PLF_SMP_MASTER_HARTID
+    bne   a0, t0, slave_hart_start
+#endif // PLF_SMP_MASTER_HARTID > 0
+#else // PLF_SMP_MASTER_HARTID
+    bnez  a0, slave_hart_start
+8000003c:	04051463          	bnez	a0,80000084 <_hart_halt>
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/startup_k1921vg015.S:77
+#endif // PLF_SMP_MASTER_HARTID
+
+    ## init HART#0 sp, tp
+    load_addrword_abs sp, __TLS0_BASE__
+80000040:	40040137          	lui	sp,0x40040
+80000044:	00010113          	mv	sp,sp
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/startup_k1921vg015.S:78
+    mv    tp, sp
+80000048:	00010213          	mv	tp,sp
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/startup_k1921vg015.S:79
+    csrw  mscratch, sp
+8000004c:	34011073          	csrw	mscratch,sp
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/startup_k1921vg015.S:86
+    // reserve trap stack space
+    li    t0, PLF_TRAP_STACK
+    sub   sp, sp, t0
+#endif // PLF_TRAP_STACK
+    ## platform init
+    load_addrword t0, plf_init
+80000050:	800002b7          	lui	t0,0x80000
+80000054:	0a028293          	addi	t0,t0,160 # 800000a0 <plf_init>
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/startup_k1921vg015.S:87
+    jalr  t0
+80000058:	000280e7          	jalr	t0
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/startup_k1921vg015.S:90
+    ## jal  plf_init
+    ## application-specific initialization hook
+    load_addrword t0, app_init
+8000005c:	800002b7          	lui	t0,0x80000
+80000060:	09c28293          	addi	t0,t0,156 # 8000009c <app_init>
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/startup_k1921vg015.S:91
+    jalr  t0
+80000064:	000280e7          	jalr	t0
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/startup_k1921vg015.S:94
+    ## jal  app_init
+    ## main() args
+    li    a0, 0
+80000068:	00000513          	li	a0,0
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/startup_k1921vg015.S:95
+    li    a1, 0
+8000006c:	00000593          	li	a1,0
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/startup_k1921vg015.S:107
+#if PLF_SMP_NON_COHERENT
+    clflush t1
+#endif // PLF_SMP_NON_COHERENT
+#endif // PLF_SMP_SUPPORT
+    ## start main
+    load_addrword t0, main
+80000070:	800002b7          	lui	t0,0x80000
+80000074:	7b028293          	addi	t0,t0,1968 # 800007b0 <main>
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/startup_k1921vg015.S:108
+    load_addrword ra, exit
+80000078:	800000b7          	lui	ra,0x80000
+8000007c:	09408093          	addi	ra,ra,148 # 80000094 <exit>
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/startup_k1921vg015.S:109
+    jr    t0
+80000080:	00028067          	jr	t0
+
+80000084 <_hart_halt>:
+_hart_halt():
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/startup_k1921vg015.S:156
+1:  wfi
+    j     1b
+#endif // PLF_SMP_SUPPORT
+#else // PLF_HTIF_BASE
+    ## disable interrupts
+    csrci mstatus, 0xf
+80000084:	3007f073          	csrci	mstatus,15
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/startup_k1921vg015.S:157
+    csrw  mie, zero
+80000088:	30401073          	csrw	mie,zero
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/startup_k1921vg015.S:158
+1:  wfi
+8000008c:	10500073          	wfi
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/startup_k1921vg015.S:159
+    j     1b
+80000090:	ffdff06f          	j	8000008c <_hart_halt+0x8>
+
+80000094 <exit>:
+exit():
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/startup_k1921vg015.S:163
+#endif // PLF_HTIF_BASE
+
+exit:
+    nop
+80000094:	00000013          	nop
+
+80000098 <abort>:
+abort():
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/startup_k1921vg015.S:165
+abort:
+    j     _hart_halt
+80000098:	fedff06f          	j	80000084 <_hart_halt>
+
+8000009c <app_init>:
+app_init():
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/startup_k1921vg015.S:213
+    jr    t0
+#endif // PLF_SMP_SUPPORT
+
+    ## stubs
+app_init:
+    ret
+8000009c:	00008067          	ret
+
+800000a0 <plf_init>:
+plf_init_generic():
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/sys_init.c:38
+{
+    // do nothing
+}
+
+void __init plf_init_generic(void)
+{
+800000a0:	1141                	addi	sp,sp,-16 # 4003fff0 <__STACK_START__+0x7f0>
+800000a2:	c606                	sw	ra,12(sp)
+800000a4:	c422                	sw	s0,8(sp)
+800000a6:	c226                	sw	s1,4(sp)
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/sys_init.c:40
+    // init BSS
+    memset(__bss_start, 0, (size_t)(__bss_end - __bss_start));
+800000a8:	90018613          	addi	a2,gp,-1792 # 40000080 <pb12_state>
+800000ac:	91818793          	addi	a5,gp,-1768 # 40000098 <__BSS_END__>
+800000b0:	40c78633          	sub	a2,a5,a2
+800000b4:	4581                	li	a1,0
+800000b6:	90018513          	addi	a0,gp,-1792 # 40000080 <pb12_state>
+800000ba:	742000ef          	jal	800007fc <memset>
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/sys_init.c:44
+
+    memcpy((void*)&__data_target_start,
+           (const void*)&__data_source_start,
+           (&__data_target_end - &__data_target_start));
+800000be:	88018613          	addi	a2,gp,-1920 # 40000000 <mach_plic_handler>
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/sys_init.c:42
+    memcpy((void*)&__data_target_start,
+800000c2:	90018793          	addi	a5,gp,-1792 # 40000080 <pb12_state>
+800000c6:	40c78633          	sub	a2,a5,a2
+800000ca:	800015b7          	lui	a1,0x80001
+800000ce:	e3858593          	addi	a1,a1,-456 # 80000e38 <__data_source_start>
+800000d2:	88018513          	addi	a0,gp,-1920 # 40000000 <mach_plic_handler>
+800000d6:	7ce000ef          	jal	800008a4 <memcpy>
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/sys_init.c:48
+
+    memcpy((void*)&__sdata_target_start,
+              (const void*)&__sdata_source_start,
+              (&__sdata_target_end - &__sdata_target_start));
+800000da:	88018613          	addi	a2,gp,-1920 # 40000000 <mach_plic_handler>
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/sys_init.c:46
+    memcpy((void*)&__sdata_target_start,
+800000de:	88018793          	addi	a5,gp,-1920 # 40000000 <mach_plic_handler>
+800000e2:	40c78633          	sub	a2,a5,a2
+800000e6:	800015b7          	lui	a1,0x80001
+800000ea:	e3858593          	addi	a1,a1,-456 # 80000e38 <__data_source_start>
+800000ee:	88018513          	addi	a0,gp,-1920 # 40000000 <mach_plic_handler>
+800000f2:	7b2000ef          	jal	800008a4 <memcpy>
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/sys_init.c:52
+
+    memcpy((void*)&__init_array_target_start,
+              (const void*)&__init_array_source_start,
+              (&__init_array_target_end - &__init_array_target_start));
+800000f6:	88018793          	addi	a5,gp,-1920 # 40000000 <mach_plic_handler>
+800000fa:	88018493          	addi	s1,gp,-1920 # 40000000 <mach_plic_handler>
+800000fe:	8c9d                	sub	s1,s1,a5
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/sys_init.c:50
+    memcpy((void*)&__init_array_target_start,
+80000100:	8626                	mv	a2,s1
+80000102:	800015b7          	lui	a1,0x80001
+80000106:	d3858593          	addi	a1,a1,-712 # 80000d38 <__clz_tab>
+8000010a:	88018513          	addi	a0,gp,-1920 # 40000000 <mach_plic_handler>
+8000010e:	796000ef          	jal	800008a4 <memcpy>
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/sys_init.c:56
+
+    memcpy((void*)&__fini_array_target_start,
+              (const void*)&__fini_array_source_start,
+              (&__fini_array_target_end - &__fini_array_target_start));
+80000112:	88018613          	addi	a2,gp,-1920 # 40000000 <mach_plic_handler>
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/sys_init.c:54
+    memcpy((void*)&__fini_array_target_start,
+80000116:	88018793          	addi	a5,gp,-1920 # 40000000 <mach_plic_handler>
+8000011a:	40c78633          	sub	a2,a5,a2
+8000011e:	800015b7          	lui	a1,0x80001
+80000122:	d3858593          	addi	a1,a1,-712 # 80000d38 <__clz_tab>
+80000126:	88018513          	addi	a0,gp,-1920 # 40000000 <mach_plic_handler>
+8000012a:	77a000ef          	jal	800008a4 <memcpy>
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/sys_init.c:59
+
+    // init functions for cpp
+    for (uint32_t i = 0; i < ((uint32_t) (&__init_array_target_end - &__init_array_target_start)) >> 2; i++)
+8000012e:	4401                	li	s0,0
+80000130:	a809                	j	80000142 <plf_init+0xa2>
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/sys_init.c:60
+    	((void (*)())((uint32_t*)&__init_array_target_start)[i])();
+80000132:	00241793          	slli	a5,s0,0x2
+80000136:	88018713          	addi	a4,gp,-1920 # 40000000 <mach_plic_handler>
+8000013a:	97ba                	add	a5,a5,a4
+8000013c:	439c                	lw	a5,0(a5)
+8000013e:	9782                	jalr	a5
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/sys_init.c:59 (discriminator 3)
+    for (uint32_t i = 0; i < ((uint32_t) (&__init_array_target_end - &__init_array_target_start)) >> 2; i++)
+80000140:	0405                	addi	s0,s0,1
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/sys_init.c:59 (discriminator 1)
+80000142:	0024d793          	srli	a5,s1,0x2
+80000146:	fef466e3          	bltu	s0,a5,80000132 <plf_init+0x92>
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/sys_init.c:61
+}
+8000014a:	40b2                	lw	ra,12(sp)
+8000014c:	4422                	lw	s0,8(sp)
+8000014e:	4492                	lw	s1,4(sp)
+80000150:	0141                	addi	sp,sp,16
+80000152:	8082                	ret
+	...
+
+Disassembly of section .text.crt:
+
+80000180 <trap_entry>:
+trap_entry():
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/startup_k1921vg015.S:247
+    .section ".text.crt.trap_entry","ax",@progbits
+    .align 6
+    .type trap_entry, @function
+trap_entry:
+    ## save context
+    context_save
+80000180:	fe512e23          	sw	t0,-4(sp)
+80000184:	00010293          	mv	t0,sp
+80000188:	f8010113          	addi	sp,sp,-128
+8000018c:	ff017113          	andi	sp,sp,-16
+80000190:	00112223          	sw	ra,4(sp)
+80000194:	00512423          	sw	t0,8(sp)
+80000198:	ffc2a283          	lw	t0,-4(t0)
+8000019c:	00312623          	sw	gp,12(sp)
+800001a0:	00412823          	sw	tp,16(sp)
+800001a4:	00512a23          	sw	t0,20(sp)
+800001a8:	00612c23          	sw	t1,24(sp)
+800001ac:	00712e23          	sw	t2,28(sp)
+800001b0:	02812023          	sw	s0,32(sp)
+800001b4:	02912223          	sw	s1,36(sp)
+800001b8:	02a12423          	sw	a0,40(sp)
+800001bc:	02b12623          	sw	a1,44(sp)
+800001c0:	02c12823          	sw	a2,48(sp)
+800001c4:	02d12a23          	sw	a3,52(sp)
+800001c8:	02e12c23          	sw	a4,56(sp)
+800001cc:	02f12e23          	sw	a5,60(sp)
+800001d0:	05012023          	sw	a6,64(sp)
+800001d4:	05112223          	sw	a7,68(sp)
+800001d8:	05212423          	sw	s2,72(sp)
+800001dc:	05312623          	sw	s3,76(sp)
+800001e0:	05412823          	sw	s4,80(sp)
+800001e4:	05512a23          	sw	s5,84(sp)
+800001e8:	05612c23          	sw	s6,88(sp)
+800001ec:	05712e23          	sw	s7,92(sp)
+800001f0:	07812023          	sw	s8,96(sp)
+800001f4:	07912223          	sw	s9,100(sp)
+800001f8:	07a12423          	sw	s10,104(sp)
+800001fc:	07b12623          	sw	s11,108(sp)
+80000200:	07c12823          	sw	t3,112(sp)
+80000204:	07d12a23          	sw	t4,116(sp)
+80000208:	07e12c23          	sw	t5,120(sp)
+8000020c:	07f12e23          	sw	t6,124(sp)
+80000210:	34002273          	csrr	tp,mscratch
+80000214:	34102373          	csrr	t1,mepc
+80000218:	00612023          	sw	t1,0(sp)
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/startup_k1921vg015.S:249
+    ## save mstatus priv stack
+    csrr s0, mstatus
+8000021c:	30002473          	csrr	s0,mstatus
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/startup_k1921vg015.S:251
+    ## load trap handler args
+    csrr a0, mcause
+80000220:	34202573          	csrr	a0,mcause
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/startup_k1921vg015.S:252
+    csrr a1, mepc
+80000224:	341025f3          	csrr	a1,mepc
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/startup_k1921vg015.S:253
+    mv   a2, sp
+80000228:	00010613          	mv	a2,sp
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/startup_k1921vg015.S:256
+
+    ## setup gp
+    load_addrword_abs gp, __global_pointer$
+8000022c:	400001b7          	lui	gp,0x40000
+80000230:	78018193          	addi	gp,gp,1920 # 40000780 <__global_pointer$>
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/startup_k1921vg015.S:258
+    ## call trap handler
+    load_addrword t0, trap_handler
+80000234:	800002b7          	lui	t0,0x80000
+80000238:	79a28293          	addi	t0,t0,1946 # 8000079a <trap_handler>
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/startup_k1921vg015.S:259
+    jalr t0
+8000023c:	000280e7          	jalr	t0
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/startup_k1921vg015.S:262
+
+    ## restore mstatus priv stack
+    csrw mstatus, s0
+80000240:	30041073          	csrw	mstatus,s0
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/startup_k1921vg015.S:264
+    ## restore context
+    context_restore
+80000244:	00012303          	lw	t1,0(sp)
+80000248:	34131073          	csrw	mepc,t1
+8000024c:	00c12183          	lw	gp,12(sp)
+80000250:	01012203          	lw	tp,16(sp)
+80000254:	01412283          	lw	t0,20(sp)
+80000258:	01812303          	lw	t1,24(sp)
+8000025c:	01c12383          	lw	t2,28(sp)
+80000260:	02012403          	lw	s0,32(sp)
+80000264:	02412483          	lw	s1,36(sp)
+80000268:	02812503          	lw	a0,40(sp)
+8000026c:	02c12583          	lw	a1,44(sp)
+80000270:	03012603          	lw	a2,48(sp)
+80000274:	03412683          	lw	a3,52(sp)
+80000278:	03812703          	lw	a4,56(sp)
+8000027c:	03c12783          	lw	a5,60(sp)
+80000280:	04012803          	lw	a6,64(sp)
+80000284:	04412883          	lw	a7,68(sp)
+80000288:	04812903          	lw	s2,72(sp)
+8000028c:	04c12983          	lw	s3,76(sp)
+80000290:	05012a03          	lw	s4,80(sp)
+80000294:	05412a83          	lw	s5,84(sp)
+80000298:	05812b03          	lw	s6,88(sp)
+8000029c:	05c12b83          	lw	s7,92(sp)
+800002a0:	06012c03          	lw	s8,96(sp)
+800002a4:	06412c83          	lw	s9,100(sp)
+800002a8:	06812d03          	lw	s10,104(sp)
+800002ac:	06c12d83          	lw	s11,108(sp)
+800002b0:	07012e03          	lw	t3,112(sp)
+800002b4:	07412e83          	lw	t4,116(sp)
+800002b8:	07812f03          	lw	t5,120(sp)
+800002bc:	07c12f83          	lw	t6,124(sp)
+800002c0:	00412083          	lw	ra,4(sp)
+800002c4:	00812103          	lw	sp,8(sp)
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/startup_k1921vg015.S:265
+    mret
+800002c8:	30200073          	mret
+	...
+
+Disassembly of section .text:
+
+80000304 <GPIO_PullModeConfig>:
+GPIO_PullModeConfig():
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../plib015/src/plib015_gpio.c:104
+{
+    assert_param(IS_GPIO_PERIPH(GPIOx));
+    assert_param(IS_GPIO_PIN(Pin));
+    assert_param(IS_GPIO_PULL_MODE(PullMode));
+
+    MODIFY_REG(GPIOx->PULLMODE, Pin, (uint32_t)PullMode);
+80000304:	511c                	lw	a5,32(a0)
+80000306:	fff5c593          	not	a1,a1
+8000030a:	8dfd                	and	a1,a1,a5
+8000030c:	8dd1                	or	a1,a1,a2
+8000030e:	d10c                	sw	a1,32(a0)
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../plib015/src/plib015_gpio.c:105
+}
+80000310:	8082                	ret
+
+80000312 <PLIC_ClaimIrq>:
+PLIC_ClaimIrq():
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/plic.c:125
+ * Get current isr number
+ */
+
+uint32_t PLIC_ClaimIrq (uint8_t target)
+{
+	if(target == Plic_Mach_Target) {
+80000312:	e509                	bnez	a0,8000031c <PLIC_ClaimIrq+0xa>
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/plic.c:126
+		return (uint32_t)(PLIC->MICC);
+80000314:	0c2007b7          	lui	a5,0xc200
+80000318:	43c8                	lw	a0,4(a5)
+8000031a:	8082                	ret
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/plic.c:128
+	} else {
+		return (uint32_t)(PLIC->UICC);
+8000031c:	0c2017b7          	lui	a5,0xc201
+80000320:	43c8                	lw	a0,4(a5)
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/plic.c:130
+	}
+}
+80000322:	8082                	ret
+
+80000324 <PLIC_ClaimComplete>:
+PLIC_ClaimComplete():
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/plic.c:138
+ * Set current isr as completed
+ */
+
+void PLIC_ClaimComplete (uint8_t target, uint32_t isrnum)
+{
+	if(target == Plic_Mach_Target) {
+80000324:	e509                	bnez	a0,8000032e <PLIC_ClaimComplete+0xa>
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/plic.c:139
+		PLIC->MICC = isrnum;
+80000326:	0c2007b7          	lui	a5,0xc200
+8000032a:	c3cc                	sw	a1,4(a5)
+8000032c:	8082                	ret
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/plic.c:141
+	} else {
+		PLIC->UICC = isrnum;
+8000032e:	0c2017b7          	lui	a5,0xc201
+80000332:	c3cc                	sw	a1,4(a5)
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/plic.c:143
+	}
+}
+80000334:	8082                	ret
+
+80000336 <PLIC_SetThreshold>:
+PLIC_SetThreshold():
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/plic.c:150
+/*
+ * Set threshold for irqs
+ */
+
+void PLIC_SetThreshold(uint8_t target, uint32_t value) {
+	if(target == Plic_Mach_Target) {
+80000336:	e509                	bnez	a0,80000340 <PLIC_SetThreshold+0xa>
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/plic.c:151
+		PLIC->MTHR = value;
+80000338:	0c2007b7          	lui	a5,0xc200
+8000033c:	c38c                	sw	a1,0(a5)
+8000033e:	8082                	ret
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/plic.c:153
+	} else {
+		PLIC->UTHR = value;
+80000340:	0c2017b7          	lui	a5,0xc201
+80000344:	c38c                	sw	a1,0(a5)
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/plic.c:155
+	}
+}
+80000346:	8082                	ret
+
+80000348 <PLIC_MachHandler>:
+PLIC_MachHandler():
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/plic.c:158
+
+
+void PLIC_MachHandler(void) {
+80000348:	1141                	addi	sp,sp,-16
+8000034a:	c606                	sw	ra,12(sp)
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/plic.c:161
+
+	// handle interrupt
+	uint32_t isr_num = PLIC_ClaimIrq(Plic_Mach_Target);
+8000034c:	4501                	li	a0,0
+8000034e:	37d1                	jal	80000312 <PLIC_ClaimIrq>
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/plic.c:163
+	// check if handler exist
+	if(mach_plic_handler[isr_num] != NULL_IRQ) {
+80000350:	400007b7          	lui	a5,0x40000
+80000354:	00251713          	slli	a4,a0,0x2
+80000358:	00078793          	mv	a5,a5
+8000035c:	97ba                	add	a5,a5,a4
+8000035e:	439c                	lw	a5,0(a5)
+80000360:	cb81                	beqz	a5,80000370 <PLIC_MachHandler+0x28>
+80000362:	c422                	sw	s0,8(sp)
+80000364:	842a                	mv	s0,a0
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/plic.c:165
+		// call isr handler
+		mach_plic_handler[isr_num]();
+80000366:	9782                	jalr	a5
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/plic.c:167
+		// set isr completes
+		PLIC_ClaimComplete(Plic_Mach_Target, isr_num);
+80000368:	85a2                	mv	a1,s0
+8000036a:	4501                	li	a0,0
+8000036c:	3f65                	jal	80000324 <PLIC_ClaimComplete>
+8000036e:	4422                	lw	s0,8(sp)
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/plic.c:169
+	}
+}
+80000370:	40b2                	lw	ra,12(sp)
+80000372:	0141                	addi	sp,sp,16
+80000374:	8082                	ret
+
+80000376 <SystemCoreClockUpdate>:
+SystemCoreClockUpdate():
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/system_k1921vg015.c:34
+uint32_t SystemPll1Clock; // System PLL1Clock Frequency
+uint32_t USBClock; 		  // USB Clock Frequency (USB PLL Clock)
+
+//-- Functions -----------------------------------------------------------------
+void SystemCoreClockUpdate(void)
+{
+80000376:	1101                	addi	sp,sp,-32
+80000378:	ce06                	sw	ra,28(sp)
+8000037a:	ca26                	sw	s1,20(sp)
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/system_k1921vg015.c:35
+	SystemCoreClock = 0; 	// При ошибке вычислений значения переменных будут равны нулю
+8000037c:	9001aa23          	sw	zero,-1772(gp) # 40000094 <SystemCoreClock>
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/system_k1921vg015.c:36
+	SystemPll0Clock = 0; 
+80000380:	9001a823          	sw	zero,-1776(gp) # 40000090 <SystemPll0Clock>
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/system_k1921vg015.c:37
+	SystemPll1Clock = 0; 
+80000384:	9001a623          	sw	zero,-1780(gp) # 4000008c <SystemPll1Clock>
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/system_k1921vg015.c:38
+	USBClock = 0; 		 
+80000388:	9001a423          	sw	zero,-1784(gp) # 40000088 <USBClock>
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/system_k1921vg015.c:40
+				
+	uint8_t refdiv = RCU->PLLSYSCFG0_bit.REFDIV;
+8000038c:	3000e7b7          	lui	a5,0x3000e
+80000390:	4bb8                	lw	a4,80(a5)
+80000392:	831d                	srli	a4,a4,0x7
+80000394:	03f77593          	andi	a1,a4,63
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/system_k1921vg015.c:41
+	uint8_t pd0a = RCU->PLLSYSCFG0_bit.PD0A + 1;
+80000398:	4bb0                	lw	a2,80(a5)
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/system_k1921vg015.c:42
+	uint8_t pd0b = RCU->PLLSYSCFG0_bit.PD0B + 1;
+8000039a:	4bb8                	lw	a4,80(a5)
+8000039c:	8341                	srli	a4,a4,0x10
+8000039e:	03f77713          	andi	a4,a4,63
+800003a2:	00170693          	addi	a3,a4,1
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/system_k1921vg015.c:43
+	uint8_t pd1a = RCU->PLLSYSCFG0_bit.PD1A + 1;
+800003a6:	4bb8                	lw	a4,80(a5)
+800003a8:	8359                	srli	a4,a4,0x16
+800003aa:	8b1d                	andi	a4,a4,7
+800003ac:	00170493          	addi	s1,a4,1
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/system_k1921vg015.c:44
+	uint8_t pd1b = RCU->PLLSYSCFG0_bit.PD1B + 1;
+800003b0:	4bb8                	lw	a4,80(a5)
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/system_k1921vg015.c:46
+
+	if (RCU->PLLSYSCFG0_bit.PLLEN)		// Если PLL включен
+800003b2:	4bbc                	lw	a5,80(a5)
+800003b4:	8b85                	andi	a5,a5,1
+800003b6:	cfc9                	beqz	a5,80000450 <SystemCoreClockUpdate+0xda>
+800003b8:	cc22                	sw	s0,24(sp)
+800003ba:	8235                	srli	a2,a2,0xd
+800003bc:	8a1d                	andi	a2,a2,7
+800003be:	0605                	addi	a2,a2,1
+800003c0:	8365                	srli	a4,a4,0x19
+800003c2:	03f77713          	andi	a4,a4,63
+800003c6:	00170413          	addi	s0,a4,1
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/system_k1921vg015.c:48
+	{	
+		if (RCU->PLLSYSCFG0_bit.DSMEN)	// Если дробный делитель включен
+800003ca:	3000e7b7          	lui	a5,0x3000e
+800003ce:	4bbc                	lw	a5,80(a5)
+800003d0:	8391                	srli	a5,a5,0x4
+800003d2:	8b85                	andi	a5,a5,1
+800003d4:	14078663          	beqz	a5,80000520 <SystemCoreClockUpdate+0x1aa>
+800003d8:	c84a                	sw	s2,16(sp)
+800003da:	c64e                	sw	s3,12(sp)
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/system_k1921vg015.c:50
+		{
+			uint64_t fbdiv = RCU->PLLSYSCFG2_bit.FBDIV << 24;
+800003dc:	3000e537          	lui	a0,0x3000e
+800003e0:	4d38                	lw	a4,88(a0)
+800003e2:	6785                	lui	a5,0x1
+800003e4:	17fd                	addi	a5,a5,-1 # fff <STACK_SIZE+0x7ff>
+800003e6:	8f7d                	and	a4,a4,a5
+800003e8:	0762                	slli	a4,a4,0x18
+800003ea:	41f75813          	srai	a6,a4,0x1f
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/system_k1921vg015.c:51
+			uint32_t frac = RCU->PLLSYSCFG1_bit.FRAC;
+800003ee:	497c                	lw	a5,84(a0)
+800003f0:	01000537          	lui	a0,0x1000
+800003f4:	157d                	addi	a0,a0,-1 # ffffff <retarget.c.1f6efe15+0xff59eb>
+800003f6:	8fe9                	and	a5,a5,a0
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/system_k1921vg015.c:52
+			SystemPll0Clock = (((HSECLK_VAL / refdiv) * (fbdiv + frac)) >> 24) / (pd0a * pd0b);
+800003f8:	00b72537          	lui	a0,0xb72
+800003fc:	b0050513          	addi	a0,a0,-1280 # b71b00 <retarget.c.1f6efe15+0xb674ec>
+80000400:	02b545b3          	div	a1,a0,a1
+80000404:	973e                	add	a4,a4,a5
+80000406:	00f73933          	sltu	s2,a4,a5
+8000040a:	9942                	add	s2,s2,a6
+8000040c:	02b90933          	mul	s2,s2,a1
+80000410:	02e589b3          	mul	s3,a1,a4
+80000414:	02e5b5b3          	mulhu	a1,a1,a4
+80000418:	992e                	add	s2,s2,a1
+8000041a:	00891793          	slli	a5,s2,0x8
+8000041e:	0189d993          	srli	s3,s3,0x18
+80000422:	0137e9b3          	or	s3,a5,s3
+80000426:	01895913          	srli	s2,s2,0x18
+8000042a:	02d60633          	mul	a2,a2,a3
+8000042e:	4681                	li	a3,0
+80000430:	854e                	mv	a0,s3
+80000432:	85ca                	mv	a1,s2
+80000434:	2bb1                	jal	80000990 <__udivdi3>
+80000436:	90a1a823          	sw	a0,-1776(gp) # 40000090 <SystemPll0Clock>
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/system_k1921vg015.c:53
+			SystemPll1Clock = (((HSECLK_VAL / refdiv) * (fbdiv + frac)) >> 24) / (pd1a * pd1b);
+8000043a:	02848633          	mul	a2,s1,s0
+8000043e:	4681                	li	a3,0
+80000440:	854e                	mv	a0,s3
+80000442:	85ca                	mv	a1,s2
+80000444:	23b1                	jal	80000990 <__udivdi3>
+80000446:	90a1a623          	sw	a0,-1780(gp) # 4000008c <SystemPll1Clock>
+8000044a:	4462                	lw	s0,24(sp)
+8000044c:	4942                	lw	s2,16(sp)
+8000044e:	49b2                	lw	s3,12(sp)
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/system_k1921vg015.c:61
+			SystemPll0Clock = (HSECLK_VAL * fbdiv) / (refdiv * pd0a * pd0b);
+			SystemPll1Clock = (HSECLK_VAL * fbdiv) / (refdiv * pd1a * pd1b);
+		}
+	}
+
+	switch (RCU->CLKSTAT_bit.SRC) {		// Определение источника тактирования ядра
+80000450:	3000e7b7          	lui	a5,0x3000e
+80000454:	5fdc                	lw	a5,60(a5)
+80000456:	8b8d                	andi	a5,a5,3
+80000458:	4709                	li	a4,2
+8000045a:	10e78e63          	beq	a5,a4,80000576 <SystemCoreClockUpdate+0x200>
+8000045e:	470d                	li	a4,3
+80000460:	10e78763          	beq	a5,a4,8000056e <SystemCoreClockUpdate+0x1f8>
+80000464:	4705                	li	a4,1
+80000466:	0ee78d63          	beq	a5,a4,80000560 <SystemCoreClockUpdate+0x1ea>
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/system_k1921vg015.c:63
+		case RCU_CLKSTAT_SRC_HSICLK:
+			SystemCoreClock = HSICLK_VAL;
+8000046a:	000f47b7          	lui	a5,0xf4
+8000046e:	24078793          	addi	a5,a5,576 # f4240 <retarget.c.1f6efe15+0xe9c2c>
+80000472:	90f1aa23          	sw	a5,-1772(gp) # 40000094 <SystemCoreClock>
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/system_k1921vg015.c:76
+		case RCU_CLKSTAT_SRC_SYSPLL0CLK:
+			SystemCoreClock = SystemPll0Clock;
+			break;	
+    }
+		
+	if (RCU->RSTDISAHB_bit.USBEN)	// Если USB используется
+80000476:	3000e7b7          	lui	a5,0x3000e
+8000047a:	4b9c                	lw	a5,16(a5)
+8000047c:	8385                	srli	a5,a5,0x1
+8000047e:	8b85                	andi	a5,a5,1
+80000480:	12078c63          	beqz	a5,800005b8 <SystemCoreClockUpdate+0x242>
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/system_k1921vg015.c:78
+	{
+		if (USB->PLLUSBCFG3_bit.USBCLKSEL == USB_PLLUSBCFG3_USBCLKSEL_PLLUSBClk)
+80000484:	200117b7          	lui	a5,0x20011
+80000488:	80c7a783          	lw	a5,-2036(a5) # 2001080c <retarget.c.1f6efe15+0x200061f8>
+8000048c:	83e1                	srli	a5,a5,0x18
+8000048e:	8b85                	andi	a5,a5,1
+80000490:	12079063          	bnez	a5,800005b0 <SystemCoreClockUpdate+0x23a>
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/system_k1921vg015.c:80
+		{	
+			refdiv = USB->PLLUSBCFG0_bit.REFDIV;
+80000494:	200116b7          	lui	a3,0x20011
+80000498:	8006a703          	lw	a4,-2048(a3) # 20010800 <retarget.c.1f6efe15+0x200061ec>
+8000049c:	831d                	srli	a4,a4,0x7
+8000049e:	03f77713          	andi	a4,a4,63
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/system_k1921vg015.c:81
+			pd0a = USB->PLLUSBCFG0_bit.PD0A + 1;
+800004a2:	8006a603          	lw	a2,-2048(a3)
+800004a6:	8235                	srli	a2,a2,0xd
+800004a8:	8a1d                	andi	a2,a2,7
+800004aa:	0605                	addi	a2,a2,1
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/system_k1921vg015.c:82
+			pd0b = USB->PLLUSBCFG0_bit.PD0B + 1;
+800004ac:	8006a783          	lw	a5,-2048(a3)
+800004b0:	83c1                	srli	a5,a5,0x10
+800004b2:	03f7f793          	andi	a5,a5,63
+800004b6:	0785                	addi	a5,a5,1
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/system_k1921vg015.c:84
+
+			if (USB->PLLUSBCFG0_bit.DSMEN)		// Если дробный делитель включен
+800004b8:	8006a683          	lw	a3,-2048(a3)
+800004bc:	8291                	srli	a3,a3,0x4
+800004be:	8a85                	andi	a3,a3,1
+800004c0:	c2e1                	beqz	a3,80000580 <SystemCoreClockUpdate+0x20a>
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/system_k1921vg015.c:86
+			{
+				uint64_t fbdiv = USB->PLLUSBCFG2_bit.FBDIV << 24;
+800004c2:	20011537          	lui	a0,0x20011
+800004c6:	80852583          	lw	a1,-2040(a0) # 20010808 <retarget.c.1f6efe15+0x200061f4>
+800004ca:	6685                	lui	a3,0x1
+800004cc:	16fd                	addi	a3,a3,-1 # fff <STACK_SIZE+0x7ff>
+800004ce:	8df5                	and	a1,a1,a3
+800004d0:	05e2                	slli	a1,a1,0x18
+800004d2:	41f5d893          	srai	a7,a1,0x1f
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/system_k1921vg015.c:87
+				uint32_t frac = USB->PLLUSBCFG1_bit.FRAC;
+800004d6:	80452683          	lw	a3,-2044(a0)
+800004da:	01000537          	lui	a0,0x1000
+800004de:	157d                	addi	a0,a0,-1 # ffffff <retarget.c.1f6efe15+0xff59eb>
+800004e0:	8ee9                	and	a3,a3,a0
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/system_k1921vg015.c:89
+
+				USBClock = (((HSECLK_VAL / refdiv) * (fbdiv + frac)) >> 24) / (pd0a * pd0b);
+800004e2:	00b72837          	lui	a6,0xb72
+800004e6:	b0080813          	addi	a6,a6,-1280 # b71b00 <retarget.c.1f6efe15+0xb674ec>
+800004ea:	02e84833          	div	a6,a6,a4
+800004ee:	00b68733          	add	a4,a3,a1
+800004f2:	00d735b3          	sltu	a1,a4,a3
+800004f6:	95c6                	add	a1,a1,a7
+800004f8:	030585b3          	mul	a1,a1,a6
+800004fc:	02e806b3          	mul	a3,a6,a4
+80000500:	02e83833          	mulhu	a6,a6,a4
+80000504:	95c2                	add	a1,a1,a6
+80000506:	00859513          	slli	a0,a1,0x8
+8000050a:	0186d713          	srli	a4,a3,0x18
+8000050e:	02f60633          	mul	a2,a2,a5
+80000512:	4681                	li	a3,0
+80000514:	8d59                	or	a0,a0,a4
+80000516:	81e1                	srli	a1,a1,0x18
+80000518:	29a5                	jal	80000990 <__udivdi3>
+8000051a:	90a1a423          	sw	a0,-1784(gp) # 40000088 <USBClock>
+8000051e:	a869                	j	800005b8 <SystemCoreClockUpdate+0x242>
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/system_k1921vg015.c:55
+			uint32_t fbdiv = RCU->PLLSYSCFG2_bit.FBDIV;			
+80000520:	3000e7b7          	lui	a5,0x3000e
+80000524:	4fbc                	lw	a5,88(a5)
+80000526:	6705                	lui	a4,0x1
+80000528:	177d                	addi	a4,a4,-1 # fff <STACK_SIZE+0x7ff>
+8000052a:	8ff9                	and	a5,a5,a4
+8000052c:	07c2                	slli	a5,a5,0x10
+8000052e:	83c1                	srli	a5,a5,0x10
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/system_k1921vg015.c:56
+			SystemPll0Clock = (HSECLK_VAL * fbdiv) / (refdiv * pd0a * pd0b);
+80000530:	00b72737          	lui	a4,0xb72
+80000534:	b0070713          	addi	a4,a4,-1280 # b71b00 <retarget.c.1f6efe15+0xb674ec>
+80000538:	02e787b3          	mul	a5,a5,a4
+8000053c:	02b60633          	mul	a2,a2,a1
+80000540:	02c68733          	mul	a4,a3,a2
+80000544:	02e7d733          	divu	a4,a5,a4
+80000548:	90e1a823          	sw	a4,-1776(gp) # 40000090 <SystemPll0Clock>
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/system_k1921vg015.c:57
+			SystemPll1Clock = (HSECLK_VAL * fbdiv) / (refdiv * pd1a * pd1b);
+8000054c:	02b48733          	mul	a4,s1,a1
+80000550:	02e40733          	mul	a4,s0,a4
+80000554:	02e7d7b3          	divu	a5,a5,a4
+80000558:	90f1a623          	sw	a5,-1780(gp) # 4000008c <SystemPll1Clock>
+8000055c:	4462                	lw	s0,24(sp)
+8000055e:	bdcd                	j	80000450 <SystemCoreClockUpdate+0xda>
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/system_k1921vg015.c:66
+			SystemCoreClock = HSECLK_VAL;
+80000560:	00b727b7          	lui	a5,0xb72
+80000564:	b0078793          	addi	a5,a5,-1280 # b71b00 <retarget.c.1f6efe15+0xb674ec>
+80000568:	90f1aa23          	sw	a5,-1772(gp) # 40000094 <SystemCoreClock>
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/system_k1921vg015.c:67
+			break;		
+8000056c:	b729                	j	80000476 <SystemCoreClockUpdate+0x100>
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/system_k1921vg015.c:69
+			SystemCoreClock = LSICLK_VAL;
+8000056e:	6721                	lui	a4,0x8
+80000570:	90e1aa23          	sw	a4,-1772(gp) # 40000094 <SystemCoreClock>
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/system_k1921vg015.c:70
+			break;
+80000574:	b709                	j	80000476 <SystemCoreClockUpdate+0x100>
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/system_k1921vg015.c:72
+			SystemCoreClock = SystemPll0Clock;
+80000576:	9101a703          	lw	a4,-1776(gp) # 40000090 <SystemPll0Clock>
+8000057a:	90e1aa23          	sw	a4,-1772(gp) # 40000094 <SystemCoreClock>
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/system_k1921vg015.c:73
+			break;	
+8000057e:	bde5                	j	80000476 <SystemCoreClockUpdate+0x100>
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/system_k1921vg015.c:91
+			} else {
+				uint32_t fbdiv = USB->PLLUSBCFG2_bit.FBDIV;			
+80000580:	200116b7          	lui	a3,0x20011
+80000584:	8086a683          	lw	a3,-2040(a3) # 20010808 <retarget.c.1f6efe15+0x200061f4>
+80000588:	6585                	lui	a1,0x1
+8000058a:	15fd                	addi	a1,a1,-1 # fff <STACK_SIZE+0x7ff>
+8000058c:	8eed                	and	a3,a3,a1
+8000058e:	06c2                	slli	a3,a3,0x10
+80000590:	82c1                	srli	a3,a3,0x10
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/system_k1921vg015.c:92
+				USBClock = (HSECLK_VAL * fbdiv) / (refdiv * pd0a * pd0b);
+80000592:	00b725b7          	lui	a1,0xb72
+80000596:	b0058593          	addi	a1,a1,-1280 # b71b00 <retarget.c.1f6efe15+0xb674ec>
+8000059a:	02b686b3          	mul	a3,a3,a1
+8000059e:	02c70733          	mul	a4,a4,a2
+800005a2:	02e787b3          	mul	a5,a5,a4
+800005a6:	02f6d6b3          	divu	a3,a3,a5
+800005aa:	90d1a423          	sw	a3,-1784(gp) # 40000088 <USBClock>
+800005ae:	a029                	j	800005b8 <SystemCoreClockUpdate+0x242>
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/system_k1921vg015.c:95
+			}		
+		} 
+		else USBClock = SystemCoreClock;
+800005b0:	9141a703          	lw	a4,-1772(gp) # 40000094 <SystemCoreClock>
+800005b4:	90e1a423          	sw	a4,-1784(gp) # 40000088 <USBClock>
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/system_k1921vg015.c:97
+	}
+}
+800005b8:	40f2                	lw	ra,28(sp)
+800005ba:	44d2                	lw	s1,20(sp)
+800005bc:	6105                	addi	sp,sp,32
+800005be:	8082                	ret
+
+800005c0 <ClkInit>:
+ClkInit():
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/system_k1921vg015.c:107
+    uint32_t sysclk_source;
+
+    //clockout control
+    #ifndef CKO_NONE
+        //C7 clockout
+        RCU->CGCFGAHB_bit.GPIOCEN = 1;
+800005c0:	3000e7b7          	lui	a5,0x3000e
+800005c4:	0007d703          	lhu	a4,0(a5) # 3000e000 <retarget.c.1f6efe15+0x300039ec>
+800005c8:	40076713          	ori	a4,a4,1024
+800005cc:	00e79023          	sh	a4,0(a5)
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/system_k1921vg015.c:108
+        RCU->RSTDISAHB_bit.GPIOCEN = 1;
+800005d0:	0107d703          	lhu	a4,16(a5)
+800005d4:	40076713          	ori	a4,a4,1024
+800005d8:	00e79823          	sh	a4,16(a5)
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/system_k1921vg015.c:109
+        GPIOC->ALTFUNCNUM_bit.PIN7 = 3;
+800005dc:	28002737          	lui	a4,0x28002
+800005e0:	5f54                	lw	a3,60(a4)
+800005e2:	6631                	lui	a2,0xc
+800005e4:	8ed1                	or	a3,a3,a2
+800005e6:	df54                	sw	a3,60(a4)
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/system_k1921vg015.c:110
+        GPIOC->ALTFUNCSET_bit.PIN7 = 1;
+800005e8:	03475683          	lhu	a3,52(a4) # 28002034 <retarget.c.1f6efe15+0x27ff7a20>
+800005ec:	0806e693          	ori	a3,a3,128
+800005f0:	02d71a23          	sh	a3,52(a4)
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/system_k1921vg015.c:124
+        RCU->CLKOUTCFG = (RCU_CLKOUTCFG_CLKSEL_HSE << RCU_CLKOUTCFG_CLKSEL_Pos) |
+				  	  	  (1 << RCU_CLKOUTCFG_DIVN_Pos) |
+						  (0 << RCU_CLKOUTCFG_DIVEN_Pos) |
+						  RCU_CLKOUTCFG_RSTDIS_Msk | RCU_CLKOUTCFG_CLKEN_Msk; //CKO = HSECLK
+    #elif defined CKO_PLL0
+        RCU->CLKOUTCFG = (RCU_CLKOUTCFG_CLKSEL_PLL0 << RCU_CLKOUTCFG_CLKSEL_Pos) |
+800005f4:	6745                	lui	a4,0x11
+800005f6:	12170713          	addi	a4,a4,289 # 11121 <retarget.c.1f6efe15+0x6b0d>
+800005fa:	0ae7ae23          	sw	a4,188(a5)
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/system_k1921vg015.c:149
+//select system clock
+#ifdef SYSCLK_PLL
+	//PLLCLK = REFCLK * (FBDIV+FRAC/2^24) / (REFDIV*(1+PD0A)*(1+PD0B))
+	
+	//select HSE as source system clock while config PLL
+	RCU->SYSCLKCFG = (RCU_SYSCLKCFG_SRC_HSECLK << RCU_SYSCLKCFG_SRC_Pos);
+800005fe:	4705                	li	a4,1
+80000600:	db98                	sw	a4,48(a5)
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/system_k1921vg015.c:151
+    // Wait switching done
+    timeout_counter = 0;
+80000602:	4681                	li	a3,0
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/system_k1921vg015.c:152
+    while ((RCU->CLKSTAT_bit.SRC != RCU->SYSCLKCFG_bit.SRC) && (timeout_counter < 100)){ //SYSCLK_SWITCH_TIMEOUT))
+80000604:	a011                	j	80000608 <ClkInit+0x48>
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/system_k1921vg015.c:153
+        timeout_counter++;
+80000606:	0685                	addi	a3,a3,1
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/system_k1921vg015.c:152
+    while ((RCU->CLKSTAT_bit.SRC != RCU->SYSCLKCFG_bit.SRC) && (timeout_counter < 100)){ //SYSCLK_SWITCH_TIMEOUT))
+80000608:	3000e7b7          	lui	a5,0x3000e
+8000060c:	5fd8                	lw	a4,60(a5)
+8000060e:	8b0d                	andi	a4,a4,3
+80000610:	5b9c                	lw	a5,48(a5)
+80000612:	8b8d                	andi	a5,a5,3
+80000614:	00f70663          	beq	a4,a5,80000620 <ClkInit+0x60>
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/system_k1921vg015.c:152 (discriminator 1)
+80000618:	06300793          	li	a5,99
+8000061c:	fed7f5e3          	bgeu	a5,a3,80000606 <ClkInit+0x46>
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/system_k1921vg015.c:173
+	RCU->PLLSYSCFG1 = 0;          //FRAC = 0					 
+	RCU->PLLSYSCFG2 = 100;         //FBDIV
+#elif (HSECLK_VAL == 12000000)
+// Fout0 = 50 000 000 Hz
+// Fout1 = 25 000 000 Hz
+	RCU->PLLSYSCFG0 =( 5 << RCU_PLLSYSCFG0_PD1B_Pos) |  //PD1B
+80000620:	3000e7b7          	lui	a5,0x3000e
+80000624:	0bc3a737          	lui	a4,0xbc3a
+80000628:	08770713          	addi	a4,a4,135 # bc3a087 <retarget.c.1f6efe15+0xbc2fa73>
+8000062c:	cbb8                	sw	a4,80(a5)
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/system_k1921vg015.c:183
+					 ( 0 << RCU_PLLSYSCFG0_FOUTEN_Pos)    |  //fouten
+					 ( 0 << RCU_PLLSYSCFG0_DSMEN_Pos)     |  //dsmen
+					 ( 0 << RCU_PLLSYSCFG0_DACEN_Pos)     |  //dacen
+					 ( 3 << RCU_PLLSYSCFG0_BYP_Pos)       |  //bypass
+					 ( 1 << RCU_PLLSYSCFG0_PLLEN_Pos);       //en
+	RCU->PLLSYSCFG1 = 0;          //FRAC = 0					 
+8000062e:	0407aa23          	sw	zero,84(a5) # 3000e054 <retarget.c.1f6efe15+0x30003a40>
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/system_k1921vg015.c:184
+	RCU->PLLSYSCFG2 = 100;         //FBDIV
+80000632:	06400713          	li	a4,100
+80000636:	cfb8                	sw	a4,88(a5)
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/system_k1921vg015.c:233
+	RCU->PLLSYSCFG1 = 0;          //FRAC = 0					 
+	RCU->PLLSYSCFG2 = 100;         //FBDIV
+#else
+#error "Please define HSECLK_VAL with correct values!"
+#endif
+	RCU->PLLSYSCFG0_bit.FOUTEN = 1; 	// Fout0 Enable
+80000638:	4bb8                	lw	a4,80(a5)
+8000063a:	f9f77713          	andi	a4,a4,-97
+8000063e:	02076713          	ori	a4,a4,32
+80000642:	cbb8                	sw	a4,80(a5)
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/system_k1921vg015.c:234
+	timeout_counter = 1000;
+80000644:	3e800793          	li	a5,1000
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/system_k1921vg015.c:235
+	while(timeout_counter) timeout_counter--;
+80000648:	a011                	j	8000064c <ClkInit+0x8c>
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/system_k1921vg015.c:235 (discriminator 2)
+8000064a:	17fd                	addi	a5,a5,-1
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/system_k1921vg015.c:235 (discriminator 1)
+8000064c:	fffd                	bnez	a5,8000064a <ClkInit+0x8a>
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/system_k1921vg015.c:236 (discriminator 1)
+	while((RCU->PLLSYSSTAT_bit.LOCK) != 1)
+8000064e:	3000e737          	lui	a4,0x3000e
+80000652:	5338                	lw	a4,96(a4)
+80000654:	8b05                	andi	a4,a4,1
+80000656:	df65                	beqz	a4,8000064e <ClkInit+0x8e>
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/system_k1921vg015.c:238
+	{}; 								// wait lock signal
+	RCU->PLLSYSCFG0_bit.BYP = 2; 		// Bypass for Fout1
+80000658:	3000e637          	lui	a2,0x3000e
+8000065c:	4a38                	lw	a4,80(a2)
+8000065e:	9b65                	andi	a4,a4,-7
+80000660:	00476713          	ori	a4,a4,4
+80000664:	ca38                	sw	a4,80(a2)
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/system_k1921vg015.c:242
+	//select PLL as source system clock
+	sysclk_source = RCU_SYSCLKCFG_SRC_SYSPLL0CLK;
+    // FLASH control settings
+    FLASH->CTRL_bit.LAT = 3;
+80000666:	3000d6b7          	lui	a3,0x3000d
+8000066a:	46f8                	lw	a4,76(a3)
+8000066c:	fff105b7          	lui	a1,0xfff10
+80000670:	15fd                	addi	a1,a1,-1 # fff0ffff <__data_source_start+0x7ff0f1c7>
+80000672:	8f6d                	and	a4,a4,a1
+80000674:	000305b7          	lui	a1,0x30
+80000678:	8f4d                	or	a4,a4,a1
+8000067a:	c6f8                	sw	a4,76(a3)
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/system_k1921vg015.c:243
+    FLASH->CTRL_bit.CEN = 1;
+8000067c:	46f8                	lw	a4,76(a3)
+8000067e:	00276713          	ori	a4,a4,2
+80000682:	c6f8                	sw	a4,76(a3)
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/system_k1921vg015.c:255
+#else
+#error "Please define SYSCLK source (SYSCLK_PLL | SYSCLK_HSE | SYSCLK_HSI | SYSCLK_LSI)!"
+#endif
+
+    //switch sysclk
+    RCU->SYSCLKCFG = (sysclk_source << RCU_SYSCLKCFG_SRC_Pos);
+80000684:	4709                	li	a4,2
+80000686:	da18                	sw	a4,48(a2)
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/system_k1921vg015.c:258
+    // Wait switching done
+    timeout_counter = 0;
+    while ((RCU->CLKSTAT_bit.SRC != RCU->SYSCLKCFG_bit.SRC) && (timeout_counter < 100)) //SYSCLK_SWITCH_TIMEOUT))
+80000688:	3000e737          	lui	a4,0x3000e
+8000068c:	5f54                	lw	a3,60(a4)
+8000068e:	8a8d                	andi	a3,a3,3
+80000690:	5b18                	lw	a4,48(a4)
+80000692:	8b0d                	andi	a4,a4,3
+80000694:	00e68863          	beq	a3,a4,800006a4 <ClkInit+0xe4>
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/system_k1921vg015.c:258 (discriminator 1)
+80000698:	06300713          	li	a4,99
+8000069c:	00f76463          	bltu	a4,a5,800006a4 <ClkInit+0xe4>
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/system_k1921vg015.c:259
+        timeout_counter++;
+800006a0:	0785                	addi	a5,a5,1
+800006a2:	b7dd                	j	80000688 <ClkInit+0xc8>
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/system_k1921vg015.c:264
+/*    if (timeout_counter == SYSCLK_SWITCH_TIMEOUT) //SYSCLK failed to switch
+        while (1) {
+        };*/
+
+}
+800006a4:	8082                	ret
+
+800006a6 <InterruptEnable>:
+InterruptEnable():
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/system_k1921vg015.c:267
+
+void InterruptEnable()
+{
+800006a6:	1141                	addi	sp,sp,-16
+800006a8:	c606                	sw	ra,12(sp)
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/system_k1921vg015.c:269
+	// Разрешаем все прерывания в machine mode
+	PLIC_SetThreshold (Plic_Mach_Target, 0);
+800006aa:	4581                	li	a1,0
+800006ac:	4501                	li	a0,0
+800006ae:	3161                	jal	80000336 <PLIC_SetThreshold>
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/system_k1921vg015.c:271
+    // Выключаем прерывание от MTIMER (если MTIMER используется в проекте - закомментировать следующую строку)
+    clear_csr(mie, MIE_MTIMER);
+800006b0:	08000793          	li	a5,128
+800006b4:	3047b7f3          	csrrc	a5,mie,a5
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/system_k1921vg015.c:273
+    // Разрешаем внешнее прерывание (PLIC) в machine mode
+    set_csr(mie, MIE_MEXTERNAL);
+800006b8:	6785                	lui	a5,0x1
+800006ba:	80078793          	addi	a5,a5,-2048 # 800 <STACK_SIZE>
+800006be:	3047a7f3          	csrrs	a5,mie,a5
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/system_k1921vg015.c:275
+    // Разрешаем прерывания на глобальном уровне
+    set_csr(mstatus, MSTATUS_MIE);
+800006c2:	300467f3          	csrrsi	a5,mstatus,8
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/system_k1921vg015.c:276
+}
+800006c6:	40b2                	lw	ra,12(sp)
+800006c8:	0141                	addi	sp,sp,16
+800006ca:	8082                	ret
+
+800006cc <SystemInit>:
+SystemInit():
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/system_k1921vg015.c:289
+    // Запрещаем прерывания на глобальном уровне
+    clear_csr(mstatus, MSTATUS_MIE);
+}
+
+void SystemInit(void)
+{
+800006cc:	1141                	addi	sp,sp,-16
+800006ce:	c606                	sw	ra,12(sp)
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/system_k1921vg015.c:290
+	ClkInit();
+800006d0:	3dc5                	jal	800005c0 <ClkInit>
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/system_k1921vg015.c:291
+}
+800006d2:	40b2                	lw	ra,12(sp)
+800006d4:	0141                	addi	sp,sp,16
+800006d6:	8082                	ret
+
+800006d8 <gpio_init>:
+gpio_init():
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../main.c:35
+//-- Defines -------------------------------------------------------------------
+
+void TMR32_IRQHandler();
+
+void gpio_init()
+{
+800006d8:	1141                	addi	sp,sp,-16
+800006da:	c606                	sw	ra,12(sp)
+RCU_AHBClkCmd():
+D:\workspace\NIIET\plib015\gpio_led_run\plib015\inc/plib015_rcu.h:448
+__STATIC_INLINE void RCU_AHBClkCmd(uint32_t AHBClk, FunctionalState State)
+{
+    assert_param(IS_RCU_AHB_CLK(AHBClk));
+    assert_param(IS_FUNCTIONAL_STATE(State));
+
+    MODIFY_REG(RCU->CGCFGAHB, AHBClk, State ? AHBClk : 0);
+800006dc:	3000e7b7          	lui	a5,0x3000e
+800006e0:	4398                	lw	a4,0(a5)
+D:\workspace\NIIET\plib015\gpio_led_run\plib015\inc/plib015_rcu.h:448 (discriminator 4)
+800006e2:	40076713          	ori	a4,a4,1024
+800006e6:	c398                	sw	a4,0(a5)
+RCU_AHBRstCmd():
+D:\workspace\NIIET\plib015\gpio_led_run\plib015\inc/plib015_rcu.h:476
+__STATIC_INLINE void RCU_AHBRstCmd(uint32_t AHBRst, FunctionalState State)
+{
+    assert_param(IS_RCU_AHB_RST(AHBRst));
+    assert_param(IS_FUNCTIONAL_STATE(State));
+
+    MODIFY_REG(RCU->RSTDISAHB, AHBRst, State ? AHBRst : 0);
+800006e8:	4b98                	lw	a4,16(a5)
+D:\workspace\NIIET\plib015\gpio_led_run\plib015\inc/plib015_rcu.h:476 (discriminator 4)
+800006ea:	40076713          	ori	a4,a4,1024
+800006ee:	cb98                	sw	a4,16(a5)
+GPIO_OutCmd():
+D:\workspace\NIIET\plib015\gpio_led_run\plib015\inc/plib015_gpio.h:259
+    assert_param(IS_GPIO_PERIPH(GPIOx));
+    assert_param(IS_GPIO_PIN(Pin));
+    assert_param(IS_FUNCTIONAL_STATE(State));
+
+    if (State == ENABLE)
+        WRITE_REG(GPIOx->OUTENSET, Pin);
+800006f0:	280026b7          	lui	a3,0x28002
+800006f4:	6741                	lui	a4,0x10
+800006f6:	177d                	addi	a4,a4,-1 # ffff <retarget.c.1f6efe15+0x59eb>
+800006f8:	d6d8                	sw	a4,44(a3)
+RCU_AHBClkCmd():
+D:\workspace\NIIET\plib015\gpio_led_run\plib015\inc/plib015_rcu.h:448
+    MODIFY_REG(RCU->CGCFGAHB, AHBClk, State ? AHBClk : 0);
+800006fa:	4398                	lw	a4,0(a5)
+D:\workspace\NIIET\plib015\gpio_led_run\plib015\inc/plib015_rcu.h:448 (discriminator 4)
+800006fc:	20076713          	ori	a4,a4,512
+80000700:	c398                	sw	a4,0(a5)
+RCU_AHBRstCmd():
+D:\workspace\NIIET\plib015\gpio_led_run\plib015\inc/plib015_rcu.h:476
+    MODIFY_REG(RCU->RSTDISAHB, AHBRst, State ? AHBRst : 0);
+80000702:	4b98                	lw	a4,16(a5)
+D:\workspace\NIIET\plib015\gpio_led_run\plib015\inc/plib015_rcu.h:476 (discriminator 4)
+80000704:	20076713          	ori	a4,a4,512
+80000708:	cb98                	sw	a4,16(a5)
+GPIO_SyncCmd():
+D:\workspace\NIIET\plib015\gpio_led_run\plib015\inc/plib015_gpio.h:550
+    assert_param(IS_GPIO_PERIPH(GPIOx));
+    assert_param(IS_GPIO_PIN(Pin));
+    assert_param(IS_FUNCTIONAL_STATE(State));
+
+    if (State == ENABLE)
+        WRITE_REG(GPIOx->SYNCSET, Pin);
+8000070a:	28001537          	lui	a0,0x28001
+8000070e:	6585                	lui	a1,0x1
+80000710:	c16c                	sw	a1,68(a0)
+gpio_init():
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../main.c:43
+    GPIO_OutCmd(GPIOC, GPIO_Pin_All, ENABLE);
+
+    RCU_AHBClkCmd(RCU_AHBClk_GPIOB, ENABLE);
+    RCU_AHBRstCmd(RCU_AHBRst_GPIOB, ENABLE);
+    GPIO_SyncCmd(GPIOB, GPIO_Pin_12, ENABLE);
+    GPIO_PullModeConfig(GPIOB, GPIO_Pin_12, GPIO_PullMode_PU);
+80000712:	4605                	li	a2,1
+80000714:	3ec5                	jal	80000304 <GPIO_PullModeConfig>
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../main.c:44
+}
+80000716:	40b2                	lw	ra,12(sp)
+80000718:	0141                	addi	sp,sp,16
+8000071a:	8082                	ret
+
+8000071c <retarget_init>:
+retarget_init():
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../retarget.c:31
+#if defined RETARGET
+    uint32_t baud_icoef = SystemCoreClock_uart / (16 * RETARGET_UART_BAUD);
+    uint32_t baud_fcoef = ((SystemCoreClock_uart / (16.0f * RETARGET_UART_BAUD) - baud_icoef) * 64 + 0.5f);
+    uint32_t uartclk_ref = 1;//RCU_UARTCFG_UARTCFG_CLKSEL_OSICLK;
+
+    RCU->CGCFGAHB_bit.GPIOAEN = 1;
+8000071c:	3000e7b7          	lui	a5,0x3000e
+80000720:	0007d703          	lhu	a4,0(a5) # 3000e000 <retarget.c.1f6efe15+0x300039ec>
+80000724:	10076713          	ori	a4,a4,256
+80000728:	00e79023          	sh	a4,0(a5)
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../retarget.c:32
+    RCU->RSTDISAHB_bit.GPIOAEN = 1;
+8000072c:	0107d703          	lhu	a4,16(a5)
+80000730:	10076713          	ori	a4,a4,256
+80000734:	00e79823          	sh	a4,16(a5)
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../retarget.c:33
+    RCU->CGCFGAPB_bit.UART0EN = 1;
+80000738:	4798                	lw	a4,8(a5)
+8000073a:	04076713          	ori	a4,a4,64
+8000073e:	c798                	sw	a4,8(a5)
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../retarget.c:34
+    RCU->RSTDISAPB_bit.UART0EN = 1;
+80000740:	4f98                	lw	a4,24(a5)
+80000742:	04076713          	ori	a4,a4,64
+80000746:	cf98                	sw	a4,24(a5)
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../retarget.c:36
+
+    RETARGET_UART_PORT->ALTFUNCNUM_bit.PIN0 = 1;
+80000748:	28000737          	lui	a4,0x28000
+8000074c:	5f54                	lw	a3,60(a4)
+8000074e:	9af1                	andi	a3,a3,-4
+80000750:	0016e693          	ori	a3,a3,1
+80000754:	df54                	sw	a3,60(a4)
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../retarget.c:37
+    RETARGET_UART_PORT->ALTFUNCNUM_bit.PIN1 = 1;
+80000756:	5f54                	lw	a3,60(a4)
+80000758:	9acd                	andi	a3,a3,-13
+8000075a:	0046e693          	ori	a3,a3,4
+8000075e:	df54                	sw	a3,60(a4)
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../retarget.c:38
+    RETARGET_UART_PORT->ALTFUNCSET = (1 << RETARGET_UART_PIN_TX_POS) | (1 << RETARGET_UART_PIN_RX_POS);
+80000760:	468d                	li	a3,3
+80000762:	db54                	sw	a3,52(a4)
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../retarget.c:39
+    RCU->UARTCLKCFG[RETARGET_UART_NUM].UARTCLKCFG = (uartclk_ref << RCU_UARTCLKCFG_CLKSEL_Pos) |
+80000764:	6741                	lui	a4,0x10
+80000766:	10170713          	addi	a4,a4,257 # 10101 <retarget.c.1f6efe15+0x5aed>
+8000076a:	dbb8                	sw	a4,112(a5)
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../retarget.c:42
+                                              	  	  RCU_UARTCLKCFG_CLKEN_Msk |
+													  RCU_UARTCLKCFG_RSTDIS_Msk;
+    RETARGET_UART->IBRD = baud_icoef;
+8000076c:	300067b7          	lui	a5,0x30006
+80000770:	4719                	li	a4,6
+80000772:	d3d8                	sw	a4,36(a5)
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../retarget.c:43
+    RETARGET_UART->FBRD = baud_fcoef;
+80000774:	02100713          	li	a4,33
+80000778:	d798                	sw	a4,40(a5)
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../retarget.c:44
+    RETARGET_UART->LCRH = UART_LCRH_FEN_Msk | (3 << UART_LCRH_WLEN_Pos);
+8000077a:	07000713          	li	a4,112
+8000077e:	d7d8                	sw	a4,44(a5)
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../retarget.c:45
+    RETARGET_UART->CR = UART_CR_TXE_Msk | UART_CR_RXE_Msk | UART_CR_UARTEN_Msk;
+80000780:	30100713          	li	a4,769
+80000784:	db98                	sw	a4,48(a5)
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../retarget.c:47
+#endif //RETARGET
+}
+80000786:	8082                	ret
+
+80000788 <periph_init>:
+periph_init():
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../main.c:68
+}
+
+
+//-- Peripheral init functions -------------------------------------------------
+void periph_init()
+{
+80000788:	1141                	addi	sp,sp,-16
+8000078a:	c606                	sw	ra,12(sp)
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../main.c:69
+	SystemInit();
+8000078c:	3781                	jal	800006cc <SystemInit>
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../main.c:70
+	SystemCoreClockUpdate();
+8000078e:	36e5                	jal	80000376 <SystemCoreClockUpdate>
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../main.c:72
+
+	gpio_init();
+80000790:	37a1                	jal	800006d8 <gpio_init>
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../main.c:73
+	retarget_init();
+80000792:	3769                	jal	8000071c <retarget_init>
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../main.c:74
+}
+80000794:	40b2                	lw	ra,12(sp)
+80000796:	0141                	addi	sp,sp,16
+80000798:	8082                	ret
+
+8000079a <trap_handler>:
+trap_handler():
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/plic.c:186
+#define MCAUSE_EXCEPT_STAMOACCSFAULT    0x7
+#define MCAUSE_EXCEPT_ECALLFRM_M_MODE   0xB
+
+void trap_handler (void)
+{
+	uint32_t mcause_val = read_csr(mcause);
+8000079a:	342027f3          	csrr	a5,mcause
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/plic.c:188
+
+	if((mcause_val & MCAUSE_INTERRUPT_FLAG) == 0) {
+8000079e:	0007c363          	bltz	a5,800007a4 <trap_handler+0xa>
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/plic.c:216
+			default: // MCAUSE_EXCEPT UNKNOWN
+
+				break;
+		}
+
+		while(1) {}; //TRAP
+800007a2:	a001                	j	800007a2 <trap_handler+0x8>
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/plic.c:185
+{
+800007a4:	1141                	addi	sp,sp,-16
+800007a6:	c606                	sw	ra,12(sp)
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/plic.c:219
+	} else {
+		// handle interrupt
+		PLIC_MachHandler();
+800007a8:	3645                	jal	80000348 <PLIC_MachHandler>
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../platform/source/plic.c:221
+	}
+}
+800007aa:	40b2                	lw	ra,12(sp)
+800007ac:	0141                	addi	sp,sp,16
+800007ae:	8082                	ret
+
+800007b0 <main>:
+main():
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../main.c:83
+
+volatile uint32_t led_shift;
+BitState pb12_state;
+//-- Main ----------------------------------------------------------------------
+int main(void)
+{
+800007b0:	1141                	addi	sp,sp,-16
+800007b2:	c606                	sw	ra,12(sp)
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../main.c:84
+  periph_init();
+800007b4:	3fd1                	jal	80000788 <periph_init>
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../main.c:86
+  //TMR32_init(SystemCoreClock>>5);
+  InterruptEnable();
+800007b6:	3dc5                	jal	800006a6 <InterruptEnable>
+GPIO_ClearBits():
+D:\workspace\NIIET\plib015\gpio_led_run\plib015\inc/plib015_gpio.h:455
+    WRITE_REG(GPIOx->DATAOUTCLR, Pin);
+800007b8:	28002737          	lui	a4,0x28002
+800007bc:	67c1                	lui	a5,0x10
+800007be:	17fd                	addi	a5,a5,-1 # ffff <retarget.c.1f6efe15+0x59eb>
+800007c0:	c75c                	sw	a5,12(a4)
+main():
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../main.c:88
+  GPIO_ClearBits(GPIOC, GPIO_Pin_All);
+  led_shift = GPIO_Pin_10;
+800007c2:	40000713          	li	a4,1024
+800007c6:	90e1a223          	sw	a4,-1788(gp) # 40000084 <led_shift>
+800007ca:	a819                	j	800007e0 <main+0x30>
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../main.c:91 (discriminator 1)
+  while(1)
+  {
+	  pb12_state = GPIO_ReadBit(GPIOB, GPIO_Pin_12);
+800007cc:	90f1a023          	sw	a5,-1792(gp) # 40000080 <pb12_state>
+D:\workspace\NIIET\plib015\gpio_led_run\Debug/../main.c:93
+
+	  if (pb12_state == SET) {
+800007d0:	4705                	li	a4,1
+800007d2:	00e78f63          	beq	a5,a4,800007f0 <main+0x40>
+GPIO_ClearBits():
+D:\workspace\NIIET\plib015\gpio_led_run\plib015\inc/plib015_gpio.h:455
+800007d6:	280027b7          	lui	a5,0x28002
+800007da:	40000713          	li	a4,1024
+800007de:	c7d8                	sw	a4,12(a5)
+GPIO_ReadBit():
+D:\workspace\NIIET\plib015\gpio_led_run\plib015\inc/plib015_gpio.h:310
+    return (BitState)READ_BIT(GPIOx->DATA, (uint32_t)Pin);
+800007e0:	280017b7          	lui	a5,0x28001
+800007e4:	439c                	lw	a5,0(a5)
+800007e6:	6705                	lui	a4,0x1
+800007e8:	8ff9                	and	a5,a5,a4
+800007ea:	d3ed                	beqz	a5,800007cc <main+0x1c>
+D:\workspace\NIIET\plib015\gpio_led_run\plib015\inc/plib015_gpio.h:310 (discriminator 1)
+800007ec:	4785                	li	a5,1
+800007ee:	bff9                	j	800007cc <main+0x1c>
+GPIO_SetBits():
+D:\workspace\NIIET\plib015\gpio_led_run\plib015\inc/plib015_gpio.h:441
+    WRITE_REG(GPIOx->DATAOUTSET, Pin);
+800007f0:	280027b7          	lui	a5,0x28002
+800007f4:	40000713          	li	a4,1024
+800007f8:	c798                	sw	a4,8(a5)
+D:\workspace\NIIET\plib015\gpio_led_run\plib015\inc/plib015_gpio.h:442
+}
+800007fa:	b7dd                	j	800007e0 <main+0x30>
+
+800007fc <memset>:
+memset():
+800007fc:	433d                	li	t1,15
+800007fe:	872a                	mv	a4,a0
+80000800:	02c37363          	bgeu	t1,a2,80000826 <memset+0x2a>
+80000804:	00f77793          	andi	a5,a4,15
+80000808:	efbd                	bnez	a5,80000886 <memset+0x8a>
+8000080a:	e5ad                	bnez	a1,80000874 <memset+0x78>
+8000080c:	ff067693          	andi	a3,a2,-16
+80000810:	8a3d                	andi	a2,a2,15
+80000812:	96ba                	add	a3,a3,a4
+80000814:	c30c                	sw	a1,0(a4)
+80000816:	c34c                	sw	a1,4(a4)
+80000818:	c70c                	sw	a1,8(a4)
+8000081a:	c74c                	sw	a1,12(a4)
+8000081c:	0741                	addi	a4,a4,16 # 1010 <STACK_SIZE+0x810>
+8000081e:	fed76be3          	bltu	a4,a3,80000814 <memset+0x18>
+80000822:	e211                	bnez	a2,80000826 <memset+0x2a>
+80000824:	8082                	ret
+80000826:	40c306b3          	sub	a3,t1,a2
+8000082a:	068a                	slli	a3,a3,0x2
+8000082c:	00000297          	auipc	t0,0x0
+80000830:	9696                	add	a3,a3,t0
+80000832:	00a68067          	jr	10(a3) # 2800200a <retarget.c.1f6efe15+0x27ff79f6>
+80000836:	00b70723          	sb	a1,14(a4)
+8000083a:	00b706a3          	sb	a1,13(a4)
+8000083e:	00b70623          	sb	a1,12(a4)
+80000842:	00b705a3          	sb	a1,11(a4)
+80000846:	00b70523          	sb	a1,10(a4)
+8000084a:	00b704a3          	sb	a1,9(a4)
+8000084e:	00b70423          	sb	a1,8(a4)
+80000852:	00b703a3          	sb	a1,7(a4)
+80000856:	00b70323          	sb	a1,6(a4)
+8000085a:	00b702a3          	sb	a1,5(a4)
+8000085e:	00b70223          	sb	a1,4(a4)
+80000862:	00b701a3          	sb	a1,3(a4)
+80000866:	00b70123          	sb	a1,2(a4)
+8000086a:	00b700a3          	sb	a1,1(a4)
+8000086e:	00b70023          	sb	a1,0(a4)
+80000872:	8082                	ret
+80000874:	0ff5f593          	zext.b	a1,a1
+80000878:	00859693          	slli	a3,a1,0x8
+8000087c:	8dd5                	or	a1,a1,a3
+8000087e:	01059693          	slli	a3,a1,0x10
+80000882:	8dd5                	or	a1,a1,a3
+80000884:	b761                	j	8000080c <memset+0x10>
+80000886:	00279693          	slli	a3,a5,0x2
+8000088a:	00000297          	auipc	t0,0x0
+8000088e:	9696                	add	a3,a3,t0
+80000890:	8286                	mv	t0,ra
+80000892:	fa8680e7          	jalr	-88(a3)
+80000896:	8096                	mv	ra,t0
+80000898:	17c1                	addi	a5,a5,-16 # 28001ff0 <retarget.c.1f6efe15+0x27ff79dc>
+8000089a:	8f1d                	sub	a4,a4,a5
+8000089c:	963e                	add	a2,a2,a5
+8000089e:	f8c374e3          	bgeu	t1,a2,80000826 <memset+0x2a>
+800008a2:	b7a5                	j	8000080a <memset+0xe>
+
+800008a4 <memcpy>:
+memcpy():
+800008a4:	00a5c7b3          	xor	a5,a1,a0
+800008a8:	8b8d                	andi	a5,a5,3
+800008aa:	00c508b3          	add	a7,a0,a2
+800008ae:	e7b1                	bnez	a5,800008fa <memcpy+0x56>
+800008b0:	478d                	li	a5,3
+800008b2:	04c7f463          	bgeu	a5,a2,800008fa <memcpy+0x56>
+800008b6:	00357793          	andi	a5,a0,3
+800008ba:	872a                	mv	a4,a0
+800008bc:	e7dd                	bnez	a5,8000096a <memcpy+0xc6>
+800008be:	ffc8f613          	andi	a2,a7,-4
+800008c2:	40e606b3          	sub	a3,a2,a4
+800008c6:	02000793          	li	a5,32
+800008ca:	04d7c463          	blt	a5,a3,80000912 <memcpy+0x6e>
+800008ce:	86ae                	mv	a3,a1
+800008d0:	87ba                	mv	a5,a4
+800008d2:	02c77163          	bgeu	a4,a2,800008f4 <memcpy+0x50>
+800008d6:	0006a803          	lw	a6,0(a3)
+800008da:	0791                	addi	a5,a5,4
+800008dc:	0691                	addi	a3,a3,4
+800008de:	ff07ae23          	sw	a6,-4(a5)
+800008e2:	fec7eae3          	bltu	a5,a2,800008d6 <memcpy+0x32>
+800008e6:	167d                	addi	a2,a2,-1 # 3000dfff <retarget.c.1f6efe15+0x300039eb>
+800008e8:	8e19                	sub	a2,a2,a4
+800008ea:	9a71                	andi	a2,a2,-4
+800008ec:	0591                	addi	a1,a1,4 # 1004 <STACK_SIZE+0x804>
+800008ee:	0711                	addi	a4,a4,4
+800008f0:	95b2                	add	a1,a1,a2
+800008f2:	9732                	add	a4,a4,a2
+800008f4:	01176663          	bltu	a4,a7,80000900 <memcpy+0x5c>
+800008f8:	8082                	ret
+800008fa:	872a                	mv	a4,a0
+800008fc:	ff157ee3          	bgeu	a0,a7,800008f8 <memcpy+0x54>
+80000900:	0005c783          	lbu	a5,0(a1)
+80000904:	0705                	addi	a4,a4,1
+80000906:	0585                	addi	a1,a1,1
+80000908:	fef70fa3          	sb	a5,-1(a4)
+8000090c:	fee89ae3          	bne	a7,a4,80000900 <memcpy+0x5c>
+80000910:	8082                	ret
+80000912:	5194                	lw	a3,32(a1)
+80000914:	0005a383          	lw	t2,0(a1)
+80000918:	0045a283          	lw	t0,4(a1)
+8000091c:	0085af83          	lw	t6,8(a1)
+80000920:	00c5af03          	lw	t5,12(a1)
+80000924:	0105ae83          	lw	t4,16(a1)
+80000928:	0145ae03          	lw	t3,20(a1)
+8000092c:	0185a303          	lw	t1,24(a1)
+80000930:	01c5a803          	lw	a6,28(a1)
+80000934:	02470713          	addi	a4,a4,36
+80000938:	fed72e23          	sw	a3,-4(a4)
+8000093c:	fc772e23          	sw	t2,-36(a4)
+80000940:	40e606b3          	sub	a3,a2,a4
+80000944:	fe572023          	sw	t0,-32(a4)
+80000948:	fff72223          	sw	t6,-28(a4)
+8000094c:	ffe72423          	sw	t5,-24(a4)
+80000950:	ffd72623          	sw	t4,-20(a4)
+80000954:	ffc72823          	sw	t3,-16(a4)
+80000958:	fe672a23          	sw	t1,-12(a4)
+8000095c:	ff072c23          	sw	a6,-8(a4)
+80000960:	02458593          	addi	a1,a1,36
+80000964:	fad7c7e3          	blt	a5,a3,80000912 <memcpy+0x6e>
+80000968:	b79d                	j	800008ce <memcpy+0x2a>
+8000096a:	0005c683          	lbu	a3,0(a1)
+8000096e:	0705                	addi	a4,a4,1
+80000970:	00377793          	andi	a5,a4,3
+80000974:	fed70fa3          	sb	a3,-1(a4)
+80000978:	0585                	addi	a1,a1,1
+8000097a:	d3b1                	beqz	a5,800008be <memcpy+0x1a>
+8000097c:	0005c683          	lbu	a3,0(a1)
+80000980:	0705                	addi	a4,a4,1
+80000982:	00377793          	andi	a5,a4,3
+80000986:	fed70fa3          	sb	a3,-1(a4)
+8000098a:	0585                	addi	a1,a1,1
+8000098c:	fff9                	bnez	a5,8000096a <memcpy+0xc6>
+8000098e:	bf05                	j	800008be <memcpy+0x1a>
+
+80000990 <__udivdi3>:
+__udivdi3():
+80000990:	8832                	mv	a6,a2
+80000992:	88aa                	mv	a7,a0
+80000994:	872e                	mv	a4,a1
+80000996:	ead5                	bnez	a3,80000a4a <__udivdi3+0xba>
+80000998:	0ec5ff63          	bgeu	a1,a2,80000a96 <__udivdi3+0x106>
+8000099c:	67c1                	lui	a5,0x10
+8000099e:	18f66c63          	bltu	a2,a5,80000b36 <__udivdi3+0x1a6>
+800009a2:	010007b7          	lui	a5,0x1000
+800009a6:	46e1                	li	a3,24
+800009a8:	00f67363          	bgeu	a2,a5,800009ae <__udivdi3+0x1e>
+800009ac:	46c1                	li	a3,16
+800009ae:	00d65333          	srl	t1,a2,a3
+800009b2:	00000797          	auipc	a5,0x0
+800009b6:	38678793          	addi	a5,a5,902 # 80000d38 <_tdata_start>
+800009ba:	979a                	add	a5,a5,t1
+800009bc:	0007c783          	lbu	a5,0(a5)
+800009c0:	02000313          	li	t1,32
+800009c4:	97b6                	add	a5,a5,a3
+800009c6:	40f306b3          	sub	a3,t1,a5
+800009ca:	00f30b63          	beq	t1,a5,800009e0 <__udivdi3+0x50>
+800009ce:	00d59733          	sll	a4,a1,a3
+800009d2:	00f557b3          	srl	a5,a0,a5
+800009d6:	8f5d                	or	a4,a4,a5
+800009d8:	00d61833          	sll	a6,a2,a3
+800009dc:	00d518b3          	sll	a7,a0,a3
+800009e0:	01085613          	srli	a2,a6,0x10
+800009e4:	02c75533          	divu	a0,a4,a2
+800009e8:	01081693          	slli	a3,a6,0x10
+800009ec:	82c1                	srli	a3,a3,0x10
+800009ee:	0108d793          	srli	a5,a7,0x10
+800009f2:	02c77733          	remu	a4,a4,a2
+800009f6:	02a685b3          	mul	a1,a3,a0
+800009fa:	0742                	slli	a4,a4,0x10
+800009fc:	8fd9                	or	a5,a5,a4
+800009fe:	00b7fa63          	bgeu	a5,a1,80000a12 <__udivdi3+0x82>
+80000a02:	97c2                	add	a5,a5,a6
+80000a04:	fff50713          	addi	a4,a0,-1 # 28000fff <retarget.c.1f6efe15+0x27ff69eb>
+80000a08:	0107e463          	bltu	a5,a6,80000a10 <__udivdi3+0x80>
+80000a0c:	30b7ee63          	bltu	a5,a1,80000d28 <__udivdi3+0x398>
+80000a10:	853a                	mv	a0,a4
+80000a12:	8f8d                	sub	a5,a5,a1
+80000a14:	02c7d733          	divu	a4,a5,a2
+80000a18:	08c2                	slli	a7,a7,0x10
+80000a1a:	0108d893          	srli	a7,a7,0x10
+80000a1e:	02c7f7b3          	remu	a5,a5,a2
+80000a22:	02e686b3          	mul	a3,a3,a4
+80000a26:	07c2                	slli	a5,a5,0x10
+80000a28:	00f8e8b3          	or	a7,a7,a5
+80000a2c:	00d8fb63          	bgeu	a7,a3,80000a42 <__udivdi3+0xb2>
+80000a30:	98c2                	add	a7,a7,a6
+80000a32:	fff70793          	addi	a5,a4,-1
+80000a36:	0108e563          	bltu	a7,a6,80000a40 <__udivdi3+0xb0>
+80000a3a:	1779                	addi	a4,a4,-2
+80000a3c:	00d8e363          	bltu	a7,a3,80000a42 <__udivdi3+0xb2>
+80000a40:	873e                	mv	a4,a5
+80000a42:	0542                	slli	a0,a0,0x10
+80000a44:	8d59                	or	a0,a0,a4
+80000a46:	4581                	li	a1,0
+80000a48:	8082                	ret
+80000a4a:	00d5f563          	bgeu	a1,a3,80000a54 <__udivdi3+0xc4>
+80000a4e:	4581                	li	a1,0
+80000a50:	4501                	li	a0,0
+80000a52:	8082                	ret
+80000a54:	67c1                	lui	a5,0x10
+80000a56:	18f6e863          	bltu	a3,a5,80000be6 <__udivdi3+0x256>
+80000a5a:	01000737          	lui	a4,0x1000
+80000a5e:	47e1                	li	a5,24
+80000a60:	00e6f363          	bgeu	a3,a4,80000a66 <__udivdi3+0xd6>
+80000a64:	47c1                	li	a5,16
+80000a66:	00f6d833          	srl	a6,a3,a5
+80000a6a:	00000717          	auipc	a4,0x0
+80000a6e:	2ce70713          	addi	a4,a4,718 # 80000d38 <_tdata_start>
+80000a72:	9742                	add	a4,a4,a6
+80000a74:	00074703          	lbu	a4,0(a4)
+80000a78:	02000813          	li	a6,32
+80000a7c:	973e                	add	a4,a4,a5
+80000a7e:	40e808b3          	sub	a7,a6,a4
+80000a82:	18e81763          	bne	a6,a4,80000c10 <__udivdi3+0x280>
+80000a86:	28b6e363          	bltu	a3,a1,80000d0c <__udivdi3+0x37c>
+80000a8a:	00c53533          	sltu	a0,a0,a2
+80000a8e:	00153513          	seqz	a0,a0
+80000a92:	4581                	li	a1,0
+80000a94:	8082                	ret
+80000a96:	c655                	beqz	a2,80000b42 <__udivdi3+0x1b2>
+80000a98:	67c1                	lui	a5,0x10
+80000a9a:	26f67163          	bgeu	a2,a5,80000cfc <__udivdi3+0x36c>
+80000a9e:	10063713          	sltiu	a4,a2,256
+80000aa2:	00173713          	seqz	a4,a4
+80000aa6:	070e                	slli	a4,a4,0x3
+80000aa8:	00e656b3          	srl	a3,a2,a4
+80000aac:	00000797          	auipc	a5,0x0
+80000ab0:	28c78793          	addi	a5,a5,652 # 80000d38 <_tdata_start>
+80000ab4:	97b6                	add	a5,a5,a3
+80000ab6:	0007c783          	lbu	a5,0(a5)
+80000aba:	02000693          	li	a3,32
+80000abe:	97ba                	add	a5,a5,a4
+80000ac0:	40f68eb3          	sub	t4,a3,a5
+80000ac4:	08f69f63          	bne	a3,a5,80000b62 <__udivdi3+0x1d2>
+80000ac8:	40c587b3          	sub	a5,a1,a2
+80000acc:	01065693          	srli	a3,a2,0x10
+80000ad0:	0642                	slli	a2,a2,0x10
+80000ad2:	8241                	srli	a2,a2,0x10
+80000ad4:	4585                	li	a1,1
+80000ad6:	02d7d533          	divu	a0,a5,a3
+80000ada:	0108d713          	srli	a4,a7,0x10
+80000ade:	02d7f7b3          	remu	a5,a5,a3
+80000ae2:	02c50333          	mul	t1,a0,a2
+80000ae6:	07c2                	slli	a5,a5,0x10
+80000ae8:	8fd9                	or	a5,a5,a4
+80000aea:	0067fa63          	bgeu	a5,t1,80000afe <__udivdi3+0x16e>
+80000aee:	97c2                	add	a5,a5,a6
+80000af0:	fff50713          	addi	a4,a0,-1
+80000af4:	0107e463          	bltu	a5,a6,80000afc <__udivdi3+0x16c>
+80000af8:	2267e563          	bltu	a5,t1,80000d22 <__udivdi3+0x392>
+80000afc:	853a                	mv	a0,a4
+80000afe:	406787b3          	sub	a5,a5,t1
+80000b02:	02d7d733          	divu	a4,a5,a3
+80000b06:	08c2                	slli	a7,a7,0x10
+80000b08:	0108d893          	srli	a7,a7,0x10
+80000b0c:	02d7f7b3          	remu	a5,a5,a3
+80000b10:	02c70633          	mul	a2,a4,a2
+80000b14:	07c2                	slli	a5,a5,0x10
+80000b16:	00f8e8b3          	or	a7,a7,a5
+80000b1a:	00c8fb63          	bgeu	a7,a2,80000b30 <__udivdi3+0x1a0>
+80000b1e:	98c2                	add	a7,a7,a6
+80000b20:	fff70793          	addi	a5,a4,-1
+80000b24:	0108e563          	bltu	a7,a6,80000b2e <__udivdi3+0x19e>
+80000b28:	1779                	addi	a4,a4,-2
+80000b2a:	00c8e363          	bltu	a7,a2,80000b30 <__udivdi3+0x1a0>
+80000b2e:	873e                	mv	a4,a5
+80000b30:	0542                	slli	a0,a0,0x10
+80000b32:	8d59                	or	a0,a0,a4
+80000b34:	8082                	ret
+80000b36:	10063693          	sltiu	a3,a2,256
+80000b3a:	0016b693          	seqz	a3,a3
+80000b3e:	068e                	slli	a3,a3,0x3
+80000b40:	b5bd                	j	800009ae <__udivdi3+0x1e>
+80000b42:	4681                	li	a3,0
+80000b44:	00000797          	auipc	a5,0x0
+80000b48:	1f478793          	addi	a5,a5,500 # 80000d38 <_tdata_start>
+80000b4c:	97b6                	add	a5,a5,a3
+80000b4e:	0007c783          	lbu	a5,0(a5)
+80000b52:	4701                	li	a4,0
+80000b54:	02000693          	li	a3,32
+80000b58:	97ba                	add	a5,a5,a4
+80000b5a:	40f68eb3          	sub	t4,a3,a5
+80000b5e:	f6f685e3          	beq	a3,a5,80000ac8 <__udivdi3+0x138>
+80000b62:	01d61833          	sll	a6,a2,t4
+80000b66:	00f5d333          	srl	t1,a1,a5
+80000b6a:	01085693          	srli	a3,a6,0x10
+80000b6e:	02d35e33          	divu	t3,t1,a3
+80000b72:	01081613          	slli	a2,a6,0x10
+80000b76:	01d595b3          	sll	a1,a1,t4
+80000b7a:	8241                	srli	a2,a2,0x10
+80000b7c:	00f557b3          	srl	a5,a0,a5
+80000b80:	8fcd                	or	a5,a5,a1
+80000b82:	0107d713          	srli	a4,a5,0x10
+80000b86:	01d518b3          	sll	a7,a0,t4
+80000b8a:	02d37333          	remu	t1,t1,a3
+80000b8e:	03c605b3          	mul	a1,a2,t3
+80000b92:	0342                	slli	t1,t1,0x10
+80000b94:	00676733          	or	a4,a4,t1
+80000b98:	00b77b63          	bgeu	a4,a1,80000bae <__udivdi3+0x21e>
+80000b9c:	9742                	add	a4,a4,a6
+80000b9e:	fffe0513          	addi	a0,t3,-1
+80000ba2:	17076c63          	bltu	a4,a6,80000d1a <__udivdi3+0x38a>
+80000ba6:	16b77a63          	bgeu	a4,a1,80000d1a <__udivdi3+0x38a>
+80000baa:	1e79                	addi	t3,t3,-2
+80000bac:	9742                	add	a4,a4,a6
+80000bae:	8f0d                	sub	a4,a4,a1
+80000bb0:	02d75533          	divu	a0,a4,a3
+80000bb4:	07c2                	slli	a5,a5,0x10
+80000bb6:	83c1                	srli	a5,a5,0x10
+80000bb8:	02d77733          	remu	a4,a4,a3
+80000bbc:	02a60333          	mul	t1,a2,a0
+80000bc0:	0742                	slli	a4,a4,0x10
+80000bc2:	8fd9                	or	a5,a5,a4
+80000bc4:	0067fb63          	bgeu	a5,t1,80000bda <__udivdi3+0x24a>
+80000bc8:	97c2                	add	a5,a5,a6
+80000bca:	fff50713          	addi	a4,a0,-1
+80000bce:	1507e263          	bltu	a5,a6,80000d12 <__udivdi3+0x382>
+80000bd2:	1467f063          	bgeu	a5,t1,80000d12 <__udivdi3+0x382>
+80000bd6:	1579                	addi	a0,a0,-2
+80000bd8:	97c2                	add	a5,a5,a6
+80000bda:	010e1593          	slli	a1,t3,0x10
+80000bde:	8dc9                	or	a1,a1,a0
+80000be0:	406787b3          	sub	a5,a5,t1
+80000be4:	bdcd                	j	80000ad6 <__udivdi3+0x146>
+80000be6:	1006b793          	sltiu	a5,a3,256
+80000bea:	0017b793          	seqz	a5,a5
+80000bee:	078e                	slli	a5,a5,0x3
+80000bf0:	00f6d833          	srl	a6,a3,a5
+80000bf4:	00000717          	auipc	a4,0x0
+80000bf8:	14470713          	addi	a4,a4,324 # 80000d38 <_tdata_start>
+80000bfc:	9742                	add	a4,a4,a6
+80000bfe:	00074703          	lbu	a4,0(a4)
+80000c02:	02000813          	li	a6,32
+80000c06:	973e                	add	a4,a4,a5
+80000c08:	40e808b3          	sub	a7,a6,a4
+80000c0c:	e6e80de3          	beq	a6,a4,80000a86 <__udivdi3+0xf6>
+80000c10:	00e65e33          	srl	t3,a2,a4
+80000c14:	011696b3          	sll	a3,a3,a7
+80000c18:	00de6e33          	or	t3,t3,a3
+80000c1c:	00e5d833          	srl	a6,a1,a4
+80000c20:	010e5e93          	srli	t4,t3,0x10
+80000c24:	03d857b3          	divu	a5,a6,t4
+80000c28:	010e1313          	slli	t1,t3,0x10
+80000c2c:	011595b3          	sll	a1,a1,a7
+80000c30:	01035313          	srli	t1,t1,0x10
+80000c34:	00e55733          	srl	a4,a0,a4
+80000c38:	8f4d                	or	a4,a4,a1
+80000c3a:	01075693          	srli	a3,a4,0x10
+80000c3e:	01161633          	sll	a2,a2,a7
+80000c42:	03d87833          	remu	a6,a6,t4
+80000c46:	02f305b3          	mul	a1,t1,a5
+80000c4a:	0842                	slli	a6,a6,0x10
+80000c4c:	0106e6b3          	or	a3,a3,a6
+80000c50:	00b6fb63          	bgeu	a3,a1,80000c66 <__udivdi3+0x2d6>
+80000c54:	96f2                	add	a3,a3,t3
+80000c56:	fff78813          	addi	a6,a5,-1
+80000c5a:	0dc6e263          	bltu	a3,t3,80000d1e <__udivdi3+0x38e>
+80000c5e:	0cb6f063          	bgeu	a3,a1,80000d1e <__udivdi3+0x38e>
+80000c62:	17f9                	addi	a5,a5,-2
+80000c64:	96f2                	add	a3,a3,t3
+80000c66:	8e8d                	sub	a3,a3,a1
+80000c68:	03d6d833          	divu	a6,a3,t4
+80000c6c:	0742                	slli	a4,a4,0x10
+80000c6e:	8341                	srli	a4,a4,0x10
+80000c70:	03d6f6b3          	remu	a3,a3,t4
+80000c74:	030305b3          	mul	a1,t1,a6
+80000c78:	06c2                	slli	a3,a3,0x10
+80000c7a:	8f55                	or	a4,a4,a3
+80000c7c:	00b77b63          	bgeu	a4,a1,80000c92 <__udivdi3+0x302>
+80000c80:	9772                	add	a4,a4,t3
+80000c82:	fff80693          	addi	a3,a6,-1
+80000c86:	09c76863          	bltu	a4,t3,80000d16 <__udivdi3+0x386>
+80000c8a:	08b77663          	bgeu	a4,a1,80000d16 <__udivdi3+0x386>
+80000c8e:	1879                	addi	a6,a6,-2
+80000c90:	9772                	add	a4,a4,t3
+80000c92:	07c2                	slli	a5,a5,0x10
+80000c94:	01081693          	slli	a3,a6,0x10
+80000c98:	01061313          	slli	t1,a2,0x10
+80000c9c:	0107e7b3          	or	a5,a5,a6
+80000ca0:	82c1                	srli	a3,a3,0x10
+80000ca2:	01035313          	srli	t1,t1,0x10
+80000ca6:	0107d813          	srli	a6,a5,0x10
+80000caa:	8241                	srli	a2,a2,0x10
+80000cac:	02680e33          	mul	t3,a6,t1
+80000cb0:	8f0d                	sub	a4,a4,a1
+80000cb2:	02668333          	mul	t1,a3,t1
+80000cb6:	02c686b3          	mul	a3,a3,a2
+80000cba:	01035593          	srli	a1,t1,0x10
+80000cbe:	96f2                	add	a3,a3,t3
+80000cc0:	96ae                	add	a3,a3,a1
+80000cc2:	02c80833          	mul	a6,a6,a2
+80000cc6:	01c6f463          	bgeu	a3,t3,80000cce <__udivdi3+0x33e>
+80000cca:	6641                	lui	a2,0x10
+80000ccc:	9832                	add	a6,a6,a2
+80000cce:	0106d613          	srli	a2,a3,0x10
+80000cd2:	9642                	add	a2,a2,a6
+80000cd4:	02c76063          	bltu	a4,a2,80000cf4 <__udivdi3+0x364>
+80000cd8:	00c70563          	beq	a4,a2,80000ce2 <__udivdi3+0x352>
+80000cdc:	853e                	mv	a0,a5
+80000cde:	4581                	li	a1,0
+80000ce0:	8082                	ret
+80000ce2:	0342                	slli	t1,t1,0x10
+80000ce4:	01035313          	srli	t1,t1,0x10
+80000ce8:	06c2                	slli	a3,a3,0x10
+80000cea:	01151533          	sll	a0,a0,a7
+80000cee:	969a                	add	a3,a3,t1
+80000cf0:	fed576e3          	bgeu	a0,a3,80000cdc <__udivdi3+0x34c>
+80000cf4:	fff78513          	addi	a0,a5,-1
+80000cf8:	4581                	li	a1,0
+80000cfa:	8082                	ret
+80000cfc:	010007b7          	lui	a5,0x1000
+80000d00:	02f67763          	bgeu	a2,a5,80000d2e <__udivdi3+0x39e>
+80000d04:	01065693          	srli	a3,a2,0x10
+80000d08:	4741                	li	a4,16
+80000d0a:	b34d                	j	80000aac <__udivdi3+0x11c>
+80000d0c:	4581                	li	a1,0
+80000d0e:	4505                	li	a0,1
+80000d10:	8082                	ret
+80000d12:	853a                	mv	a0,a4
+80000d14:	b5d9                	j	80000bda <__udivdi3+0x24a>
+80000d16:	8836                	mv	a6,a3
+80000d18:	bfad                	j	80000c92 <__udivdi3+0x302>
+80000d1a:	8e2a                	mv	t3,a0
+80000d1c:	bd49                	j	80000bae <__udivdi3+0x21e>
+80000d1e:	87c2                	mv	a5,a6
+80000d20:	b799                	j	80000c66 <__udivdi3+0x2d6>
+80000d22:	1579                	addi	a0,a0,-2
+80000d24:	97c2                	add	a5,a5,a6
+80000d26:	bbe1                	j	80000afe <__udivdi3+0x16e>
+80000d28:	1579                	addi	a0,a0,-2
+80000d2a:	97c2                	add	a5,a5,a6
+80000d2c:	b1dd                	j	80000a12 <__udivdi3+0x82>
+80000d2e:	01865693          	srli	a3,a2,0x18
+80000d32:	4761                	li	a4,24
+80000d34:	bba5                	j	80000aac <__udivdi3+0x11c>
