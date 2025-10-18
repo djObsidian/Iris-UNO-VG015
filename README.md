@@ -1,4 +1,6 @@
 # Ирис UNO-ВГ015
+**Проект доступен на github**: https://github.com/djObsidian/Iris-UNO-VG015  
+**Проект доступен на gitflic**: https://gitflic.ru/project/mikhvad/irisuno-vg015  
 ## Описание
 Ирис UNO-ВГ015 это минимальная отладочная плата с отечественным микроконтроллером К1921ВГ015.
 ![Вид сверху](<images/IrisUNO top view.png>)
