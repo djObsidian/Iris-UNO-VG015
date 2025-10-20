@@ -13,7 +13,7 @@
 - 4 светодиода подключенные к GPIO
 - HSE кварцевый резонатор на 12 МГц
 - LSE кварцевый резонатор на 32.768 кГц  
-
+  
 ![Перспективный вид](<images/IrisUNO perspective.png>)
 ## Назначения пинов
 ### Распиновка МК
@@ -55,8 +55,8 @@
 -f ch347t.cfg
 -f k1921vg015.cfg
 -c "init;halt"
- ```  
-
+ ```
+  
  ### 6. Настройки проекта для платы Ирис UNO
  Для запуска примеров из NIIET RISC-V на плате Ирис UNO необходимо поменять символы при сборке проекта. Откройте меню Project -> Properties -> C/C++ Build -> Settings -> GNU RISC-V C Compiler -> Preprocessor  
 ![alt text](images/HSEclkval.png)  
